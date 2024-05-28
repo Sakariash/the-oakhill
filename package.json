@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "storyblok-js-client": "^6.7.3"
   }
 }
