@@ -1,15 +1,14 @@
 {
   "name": "portfolio-2.0",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^14.3.0",
     "react": "latest",
     "react-dom": "latest",
     "storyblok-js-client": "^6.7.3"
