@@ -5,16 +5,14 @@ import Layout from "../components/Layout";
 
 export default function Home({ story, config }) {
   story = useStoryblokState(story);
-
+  
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Poprtfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout story={config}>
         <StoryblokComponent blok={story.content} />
-      </Layout>
     </div>
   );
 }
@@ -29,8 +27,6 @@ export async function getStaticProps() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
   let { data: config } = await storyblokApi.get('cdn/stories/config', sbParams);
-
-  console.log('Config Data:', config);
 
   return {
     props: {

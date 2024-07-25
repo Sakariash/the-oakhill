@@ -29,7 +29,7 @@ storyblokInit({
   }
 });
 
-function MyApp({ Component, pageProps }){ 
+function MyApp({ Component, pageProps }) { 
   return (
     <Layout story={pageProps.config}>
         <Component {...pageProps} />

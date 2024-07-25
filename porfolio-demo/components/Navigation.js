@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
-const Navigation = () => {
+import HeaderMenu from "./HeaderMenu";
+const Navigation = ({story}) => {
   const [openMenu, setOpenMenu] = useState(false);
- 
   return (
-    <div className="relative bg-white border-b-2 border-gray-100">
+    <div className="relative border-b-2 border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -32,7 +32,7 @@ const Navigation = () => {
               aria-expanded="false"
             >
               <span className="sr-only">Open menu</span>
-              {/* <!-- Heroicon name: outline/menu --> */}
+
               <svg
                 className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,26 +50,7 @@ const Navigation = () => {
               </svg>
             </button>
           </div>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                
-                About
-              </a>
-            </Link>
-            <Link href="/blog">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                
-                Blog
-              </a>
-            </Link>
-            <Link href="/services">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                
-                Services
-              </a>
-            </Link>
-          </div>
+          <HeaderMenu story={story && story.header_menu} />
         </div>
       </div>
  
