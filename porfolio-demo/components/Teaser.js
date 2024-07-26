@@ -1,23 +1,27 @@
 import Image from 'next/image';
 import { storyblokEditable } from '@storyblok/react';
 
-const Teaser = ({ blok }) => {
+const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
   return (
-    <div {...storyblokEditable(blok)}>
-      <h2 className="text-2xl mb-10">{blok.headline}</h2>
+    <div {...storyblokEditable(blok)} className={`relative ${isTwoColumn ? 'w-full' : ''}`}>
       {blok.image && blok.image.filename && (
-        // <div style={{ width: '300px', height: 'auto',  }}>
-        <Image
-           src={blok.image.filename}
-          //  layout="responsive"
-           width={500}
-           height={500}
-           objectFit="cover" 
-           alt={blok.image.alt || 'Image'}
-        />
-        // </div>
+        <div className={`relative w-full h-0 pb-[100%] ${isTwoColumn ? 'pb-[100%]' : ''}`}>
+          <Image
+            src={blok.image.filename}
+            layout="fill"
+            objectFit="cover"
+            alt={blok.image.alt || 'Image'}
+            className="absolute inset-0"
+          />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <h2 className={`absolute top-5 left-5 text-white text-2xl text-left z-10 ${isTwoColumn ? 'text-5xl' : ''} ${isThreeColumn ? 'left-3' : ''} ${isThreeColumn ? 'top-3' : ''}`}>
+            {blok.headline}
+          </h2>
+        </div>
       )}
-      <p>{blok.info}</p>
+      <div className="p-4 bg-white shadow-md w-full">
+        <p className="text-left">{blok.info}</p>
+      </div>
     </div>
   );
 };
