@@ -30,6 +30,7 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) { 
+  console.log('pageProps', pageProps)
   return (
     <Layout story={pageProps.config}>
         <Component {...pageProps} />

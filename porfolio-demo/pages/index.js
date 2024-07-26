@@ -1,7 +1,6 @@
 import Head from "next/head";
 import {
   useStoryblokState, getStoryblokApi, StoryblokComponent} from "@storyblok/react";
-import Layout from "../components/Layout";
 
 export default function Home({ story, config }) {
   story = useStoryblokState(story);
