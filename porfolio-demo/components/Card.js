@@ -4,20 +4,20 @@ import { storyblokEditable } from '@storyblok/react';
 const Card = ({ blok }) => {
   const hasInfo = !!blok.info;
   const hasButton = true; //Fix storyblok - Should button be required?
-
+// @TODO: fix text placement and transition
   return (
-    <div {...storyblokEditable(blok)} className="relative w-72 h-96 bg-black rounded-3xl overflow-hidden cursor-pointer transition-transform duration-250 hover:scale-90 group">
+    <div {...storyblokEditable(blok)} className="relative h-96 bg-black rounded-3xl overflow-hidden transition-transform duration-250 hover:scale-90 group">
       <ul className="absolute right-2 top-0 flex flex-col items-center justify-center z-40 rounded-lg p-2 opacity-0 transform translate-x-full transition-all duration-250 group-hover:opacity-100 group-hover:translate-x-0">
-        <li className="bg-white w-10 h-10 flex items-center justify-center opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
+        <li className="bg-white w-10 h-10 flex items-center justify-center cursor-pointer opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
           <i className='bx bx-drink text-xl text-black'></i>
         </li>
-        <li className="bg-white w-10 h-10 flex items-center justify-center opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
+        <li className="bg-white w-10 h-10 flex items-center justify-center cursor-pointer opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
           <i className='bx bx-film text-xl text-black'></i>
         </li>
-        <li className="bg-white w-10 h-10 flex items-center justify-center opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
+        <li className="bg-white w-10 h-10 flex items-center justify-center cursor-pointer opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
           <i className='bx bx-store-alt text-xl text-black'></i>
         </li>
-        <li className="bg-white w-10 h-10 flex items-center justify-center opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg">
+        <li className="bg-white w-10 h-10 flex items-center justify-center cursor-pointer opacity-70 transition-all duration-500  group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg">
           <i className='bx bx-map text-xl text-black'></i>
         </li>
       </ul>
