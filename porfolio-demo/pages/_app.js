@@ -1,23 +1,27 @@
 import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Feature from "../components/Feature";
-import Grid from "../components/Grid";
+import ThreeColumn from "../components/ThreeColumn";
+import TwoColumn from "../components/TwoColumn";
 import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 import Config from "../components/Config";
 import HeaderMenu from "../components/HeaderMenu";
 import MenuLink from "../components/MenuLink";
 import Layout from "../components/Layout";
+import Card from "../components/Card";
 
 const components = {
   feature: Feature,
-  grid: Grid,
+  threeColumn: ThreeColumn,
+  twoColumn: TwoColumn,
   teaser: Teaser,
   page: Page,
   config: Config,
   layout: Layout,
   header_menu: HeaderMenu,
   menu_link: MenuLink,
+  card: Card,
 };
 
 storyblokInit({
@@ -30,7 +34,6 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) { 
-  console.log('pageProps', pageProps)
   return (
     <Layout story={pageProps.config}>
         <Component {...pageProps} />
