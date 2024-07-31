@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react';
 
 const TwoImages = ({ blok }) => {
   return (
-    <div {...storyblokEditable(blok)} className="relative h-96 flex mx-4">
+    <div {...storyblokEditable(blok)} className="relative h-screen mx-4 py-4 flex">
       {/* White Margin */}
       <div className="relative" style={{ width: '4px', height: '100%', zIndex: 10 }}>
         <div className="absolute inset-0 bg-white"></div>
@@ -12,7 +12,7 @@ const TwoImages = ({ blok }) => {
       {/* Container for images to handle absolute positioning */}
       <div className="relative flex-1 h-full">
         {/* First Image */}
-        <div className="absolute top-0 left-0 w-[calc(50%+50px)] h-full" style={{ clipPath: 'polygon(0 0, 100% 0, 89% 100%, 0 100%)' }}>
+        <div className="absolute top-0 z-40 left-0 w-[calc(50%+50px)] h-full" style={{ clipPath: 'polygon(0 0, 100% 0, 89% 100%, 0 100%)' }}>
           {blok.Images[0]?.image?.filename && (
             <div className="relative h-full w-full">
               <Image
