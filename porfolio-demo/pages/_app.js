@@ -10,6 +10,8 @@ import HeaderMenu from "../components/HeaderMenu";
 import MenuLink from "../components/MenuLink";
 import Layout from "../components/Layout";
 import Card from "../components/Card";
+import InformationText from "../components/InformationText";
+import TwoImages from "../components/TwoImage";
 
 const components = {
   feature: Feature,
@@ -22,6 +24,8 @@ const components = {
   header_menu: HeaderMenu,
   menu_link: MenuLink,
   card: Card,
+  information: InformationText,
+  twoImage: TwoImages
 };
 
 storyblokInit({
