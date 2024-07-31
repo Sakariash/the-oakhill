@@ -1,24 +1,13 @@
-// import Footer from "./Footer";
-// import Config from './Config';
- 
-// const Layout = ({ children, story }) => (
-//   <div>
-//     {story && story.content && <Config blok={story.content} />}
-//     {children}
-//     <Footer />
-//   </div>
-// );
- 
-// export default Layout;
 import Navigation from "./Navigation";
 import Footer from "./Footer";
  
 const Layout = ({ children, story }) => (
-  console.log('children', children),
-  <div>
+  <div className="flex flex-col min-h-screen">
+  <main className="flex-grow">
    <Navigation story={story && story.content} />
       {children}
-    <Footer />
+      </main>
+    <Footer story={story && story.content}/>
   </div>
 );
  
