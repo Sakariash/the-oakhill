@@ -13,6 +13,7 @@ import Card from "../components/Card";
 import InformationText from "../components/InformationText";
 import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
+import GenericForm from "../components/Form";
 
 const components = {
   feature: Feature,
@@ -28,6 +29,7 @@ const components = {
   information: InformationText,
   twoImage: TwoImages,
   threeImage: ThreeImages,
+  form: GenericForm,
 };
 
 storyblokInit({
