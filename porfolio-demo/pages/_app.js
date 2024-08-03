@@ -12,6 +12,7 @@ import Layout from "../components/Layout";
 import Card from "../components/Card";
 import InformationText from "../components/InformationText";
 import TwoImages from "../components/TwoImage";
+import ThreeImages from "../components/ThreeImage";
 
 const components = {
   feature: Feature,
@@ -25,7 +26,8 @@ const components = {
   menu_link: MenuLink,
   card: Card,
   information: InformationText,
-  twoImage: TwoImages
+  twoImage: TwoImages,
+  threeImage: ThreeImages,
 };
 
 storyblokInit({
