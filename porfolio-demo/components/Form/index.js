@@ -68,9 +68,7 @@ const GenericForm = ({ blok }) => {
                 });
             }
           };
-        
-        
-        
+    
           return (
             <div {...storyblokEditable(blok)} className="max-w-4xl mx-auto text-left p-6 bg-red-200 shadow-lg rounded-lg border border-gray-200">
               <h2 className="text-3xl font-semibold mb-6 text-gray-800">{blok.title || 'Contact Form'}</h2>
