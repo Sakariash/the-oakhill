@@ -3,16 +3,17 @@ import { storyblokEditable } from '@storyblok/react';
 import emailjs from 'emailjs-com';
 
 const GenericForm = ({ blok }) => {
+    console.log('blok::>', blok)
           const [formData, setFormData] = useState({
             name: '',
             lastname: '',
-            company: '',
+            address: '',
             description: '',
             checklist: [],
           });
           const [errors, setErrors] = useState({});
           const [notification, setNotification] = useState(null);
-        
+          
           const handleChange = (e) => {
             const { name, value, type, checked } = e.target;
             if (type === 'checkbox') {
@@ -41,7 +42,7 @@ const GenericForm = ({ blok }) => {
               const templateParams = {
                 name: formData.name,
                 lastname: formData.lastname,
-                company: formData.company,
+                address: formData.address,
                 description: formData.description,
                 checklist: formData.checklist.join(', '),
               };
@@ -57,7 +58,7 @@ const GenericForm = ({ blok }) => {
                   setFormData({
                     name: '',
                     lastname: '',
-                    company: '',
+                    address: '',
                     description: '',
                     checklist: [],
                   });
@@ -70,10 +71,10 @@ const GenericForm = ({ blok }) => {
           };
     
           return (
-            <div {...storyblokEditable(blok)} className="max-w-4xl mx-auto text-left p-6 bg-red-200 shadow-lg rounded-lg border border-gray-200">
-              <h2 className="text-3xl font-semibold mb-6 text-gray-800">{blok.title || 'Contact Form'}</h2>
+            <div {...storyblokEditable(blok)} className="max-w-4xl mx-auto font-diatype text-left p-6  shadow-lg rounded-lg border border-gray-200">
+              <h2 className="text-3xl font-diatype mb-6 text-gray-800">{blok.title || 'Contact Form'}</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
-                {blok.Name !== undefined && (
+                {blok.name && (
                   <div className="mb-4">
                     <label htmlFor="name" className="block text-gray-700 font-medium mb-1 px-2">Namn</label>
                     <input
@@ -87,7 +88,7 @@ const GenericForm = ({ blok }) => {
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                   </div>
                 )}
-                {blok.Efternamn !== undefined && (
+                {blok.lastname !== undefined && (
                   <div className="mb-4">
                     <label htmlFor="lastname" className="block text-gray-700 font-medium mb-1 px-2">Efternamn</label>
                     <input
@@ -100,26 +101,26 @@ const GenericForm = ({ blok }) => {
                     />
                   </div>
                 )}
-                {blok.Company !== undefined && (
+                {blok.address !== undefined && (
                   <div className="mb-4">
-                    <label htmlFor="company" className="block text-gray-700 font-medium mb-1 px-2">Adress</label>
+                    <label htmlFor="address" className="block text-gray-700 font-medium mb-1 px-2">Adress</label>
                     <input
                       type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
+                      id="address"
+                      name="address"
+                      value={formData.address}
                       onChange={handleChange}
                       className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 )}
-                {blok.Checklist !== undefined && (
+                {blok.checklist !== undefined && (
                   <div className="mb-4">
                     <p className="text-gray-700 font-medium mb-2 px-2">Vad behöver ni hjälp med?</p>
                     {blok.Checklist && Array.isArray(blok.Checklist) && blok.Checklist.length > 0 ? (
                       blok.Checklist.map((option, index) => (
                         option ? (
-                          <div key={index} className="flex items-center mb-2 px-2 bg-blue-200">
+                          <div key={index} className="flex items-center mb-2 px-2">
                             <input
                               type="checkbox"
                               id={`checkbox-${index}`}
@@ -138,9 +139,9 @@ const GenericForm = ({ blok }) => {
                     )}
                   </div>
                 )}
-                {blok.Beskrivning !== undefined && (
+                {blok.description!== undefined && (
                   <div className="mb-4">
-                    <label htmlFor="description" className="block text-gray-700 font-medium mb-1 px-2">Description</label>
+                    <label htmlFor="description" className="block text-gray-700 font-medium mb-1 px-2">Beskrivning</label>
                     <textarea
                       id="description"
                       name="description"
@@ -157,7 +158,7 @@ const GenericForm = ({ blok }) => {
                 </button>
               </form>
               {notification && (
-                 <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                 <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-green-200 text-green-800' : ' text-red-800'}`}>
                     {notification.message}
                 </div>)}
             </div>

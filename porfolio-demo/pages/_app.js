@@ -14,6 +14,7 @@ import InformationText from "../components/InformationText";
 import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
+import { useEffect } from "react";
 
 const components = {
   feature: Feature,
@@ -42,6 +43,9 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) { 
+  useEffect(() => {
+    document.fonts.load('Diatype');
+  }, []);
   return (
     <Layout story={pageProps.config}>
         <Component {...pageProps} />

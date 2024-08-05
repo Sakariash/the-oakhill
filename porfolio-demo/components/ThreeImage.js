@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react';
 
 const ThreeImages = ({ blok }) => {
   return (
-    <div {...storyblokEditable(blok)} className="relative h-screen mx-4 py-4 flex bg-gray-200 mb-6">
+    <div {...storyblokEditable(blok)} className="relative h-screen mx-4 py-4 flex mb-6">
       {/* Desktop View */}
       <div className="relative flex-1 h-full hidden md:flex">
         <div

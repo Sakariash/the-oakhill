@@ -14,13 +14,13 @@ const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
             className="absolute inset-0"
           />
           <div className="absolute inset-0 bg-black opacity-30"></div>
-          <h2 className={`absolute top-5 left-5 text-white text-2xl text-left z-10 ${isTwoColumn ? 'text-5xl' : ''} ${isThreeColumn ? 'left-3' : ''} ${isThreeColumn ? 'top-3' : ''}`}>
+          <h2 className={`absolute top-5 left-5 text-white text-2xl text-left z-10 font-diatype ${isTwoColumn ? 'text-5xl' : ''} ${isThreeColumn ? 'left-3' : ''} ${isThreeColumn ? 'top-3' : ''}`}>
             {blok.headline}
           </h2>
         </div>
       )}
       <div className="py-4 pr-4 bg-white border-black w-full">
-        <p className="text-left">{blok.info}</p>
+        <p className="text-left font-diatype text-lg">{blok.info}</p>
       </div>
     </div>
   );
