@@ -1,3 +1,4 @@
+// pages/_app.js
 import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Feature from "../components/Feature";
@@ -14,7 +15,7 @@ import InformationText from "../components/InformationText";
 import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
-import { useEffect } from "react";
+import Hero from "../components/Hero"; // Import Hero component
 
 const components = {
   feature: Feature,
@@ -31,6 +32,7 @@ const components = {
   twoImage: TwoImages,
   threeImage: ThreeImages,
   form: GenericForm,
+  hero: Hero,
 };
 
 storyblokInit({
@@ -43,14 +45,14 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) { 
-  useEffect(() => {
-    document.fonts.load('Diatype');
-  }, []);
+  const isHomePage = pageProps.story && pageProps.story.full_slug === 'home'; // Check if it's the homepage
+
   return (
     <Layout story={pageProps.config}>
-        <Component {...pageProps} />
+      {isHomePage && <Hero blok={pageProps.story.content.hero} />} {/* Render Hero only on homepage */}
+      <Component {...pageProps} />
     </Layout>
-  )
+  );
 }
 
 export default MyApp;
