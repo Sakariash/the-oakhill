@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'oakhill-green': '#C3CABA',
+      },
       keyframes: {
         fadeInOut: {
           '0%': { opacity: '0' },
