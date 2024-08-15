@@ -1,28 +1,29 @@
 import { useState } from "react";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
-const Navigation = ({story}) => {
+import Image from "next/image";
+
+const Navigation = ({ story }) => {
   const [openMenu, setOpenMenu] = useState(false);
+
   return (
-    <div className="relative border-b-2 border-gray-100">
+    <div className="relative border-b border-gray-600 mx-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
-              <a>
-                <span className="sr-only">Storyblok</span>
-                <img
-                  className="h-20 w-auto sm:h-10 hidden sm:block"
-                  src='https://a.storyblok.com/f/88751/251x53/0d3909fe96/storyblok-primary.png'
-                  alt="Storyblok"
-                />
-                <img
-                  className="h-20 w-auto sm:h-10 sm:hidden"
-                  src='https://a.storyblok.com/f/88751/92x106/835caf912a/storyblok-logo.png'
-                  alt="Storyblok"
-                />
-              </a>
-            </Link>
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-32 h-10"> {/* Container for the logo */}
+            {story.header_logo && story.header_logo.filename && (
+              <Link href="/">
+                <a className="relative w-48 h-full">
+                  <Image
+                    src={story.header_logo.filename}
+                    layout="fill"
+                    objectFit="contain" // Ensure the image is contained within the container
+                    alt={story.header_logo.alt || 'Logo'}
+                    className="absolute inset-0"
+                  />
+                </a>
+              </Link>
+            )}
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button
@@ -32,7 +33,6 @@ const Navigation = ({story}) => {
               aria-expanded="false"
             >
               <span className="sr-only">Open menu</span>
-
               <svg
                 className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,10 +53,8 @@ const Navigation = ({story}) => {
           <HeaderMenu story={story && story.header_menu} /> 
         </div>
       </div>
- 
-      {/* <!--
-        Mobile menu, show/hide based on mobile menu state.
-      --> */}
+
+      {/* Mobile menu, show/hide based on mobile menu state */}
       {openMenu && (
         <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
@@ -76,7 +74,6 @@ const Navigation = ({story}) => {
                     className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                   >
                     <span className="sr-only">Close menu</span>
-                    {/* <!-- Heroicon name: outline/x --> */}
                     <svg
                       className="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
@@ -99,18 +96,14 @@ const Navigation = ({story}) => {
                 <nav className="grid gap-y-8">
                   <Link href="/about">
                     <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/chart-bar --> */}
                       <span className="ml-3 text-base font-medium text-gray-900">
-                        
                         About
                       </span>
                     </a>
                   </Link>
                   <Link href="/blog">
                     <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/cursor-click --> */}
                       <span className="ml-3 text-base font-medium text-gray-900">
-                        
                         Blog
                       </span>
                     </a>
@@ -118,7 +111,6 @@ const Navigation = ({story}) => {
                   <Link href="/services">
                     <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                       <span className="ml-3 text-base font-medium text-gray-900">
-                        
                         Services
                       </span>
                     </a>
@@ -132,5 +124,5 @@ const Navigation = ({story}) => {
     </div>
   );
 };
- 
+
 export default Navigation;
