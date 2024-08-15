@@ -1,4 +1,3 @@
-// pages/_app.js
 import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Feature from "../components/Feature";
@@ -16,6 +15,9 @@ import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
 import Hero from "../components/Hero"; // Import Hero component
+import ProtectedRoute from "../components/ProtectedRoute";
+import FAQ from "../components/FAQ";
+import Packages from "../components/Packages";
 
 const components = {
   feature: Feature,
@@ -33,6 +35,8 @@ const components = {
   threeImage: ThreeImages,
   form: GenericForm,
   hero: Hero,
+  faq: FAQ,
+  packages: Packages,
 };
 
 storyblokInit({
@@ -48,10 +52,12 @@ function MyApp({ Component, pageProps }) {
   const isHomePage = pageProps.story && pageProps.story.full_slug === 'home'; // Check if it's the homepage
 
   return (
-    <Layout story={pageProps.config}>
+    // <ProtectedRoute>
+      <Layout story={pageProps.config}>
       {isHomePage && <Hero blok={pageProps.story.content.hero} />} {/* Render Hero only on homepage */}
       <Component {...pageProps} />
-    </Layout>
+      </Layout>
+    // </ProtectedRoute>
   );
 }
 
