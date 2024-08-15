@@ -3,7 +3,6 @@ import { storyblokEditable } from '@storyblok/react';
 import emailjs from 'emailjs-com';
 
 const GenericForm = ({ blok }) => {
-    console.log('blok::>', blok)
           const [formData, setFormData] = useState({
             name: '',
             lastname: '',
