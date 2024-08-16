@@ -34,42 +34,40 @@ const GenericForm = ({ blok }) => {
     return Object.keys(newErrors).length === 0;
   };
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      try {
-        const response = await fetch('/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            lastname: formData.lastname,
-            address: formData.address,
-            description: formData.description,
-            checklist: formData.checklist,
-          }),
+      fetch('https://www.theoakhill.se/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          lastname: formData.lastname,
+          address: formData.address,
+          description: formData.description,
+          checklist: formData.checklist,
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        setNotification({ type: 'success', message: 'Tack, vi har tagot emot dit email!' });
+        setFormData({
+          name: '',
+          lastname: '',
+          address: '',
+          description: '',
+          checklist: [],
         });
-
-        if (response.ok) {
-          setNotification({ type: 'success', message: 'Tack, vi har tagot emot ditt email!' });
-          setFormData({
-            name: '',
-            lastname: '',
-            address: '',
-            description: '',
-            checklist: [],
-          });
-          setErrors({});
-        } else {
-          setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
-        }
-      } catch (error) {
+        setErrors({});
+      })
+      .catch(error => {
         setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
-      }
+      });
     }
   };
+  
   
   return (
     <div {...storyblokEditable(blok)} className="relative max-w-4xl mx-auto font-montserrat text-left p-6 shadow-md rounded-lg border border-oakhill-green">
