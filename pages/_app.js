@@ -14,7 +14,7 @@ import InformationText from "../components/InformationText";
 import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
-import Hero from "../components/Hero"; // Import Hero component
+import Hero from "../components/Hero";
 import ProtectedRoute from "../components/ProtectedRoute";
 import FAQ from "../components/FAQ";
 import Packages from "../components/Packages";
@@ -50,7 +50,7 @@ storyblokInit({
 
 function MyApp({ Component, pageProps }) { 
   const isHomePage = pageProps.story && pageProps.story.full_slug === 'home'; // Check if it's the homepage
-
+  const story = pageProps.story || {};
   return (
     // <ProtectedRoute>
       <Layout story={pageProps.config}>

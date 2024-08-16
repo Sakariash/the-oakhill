@@ -14,7 +14,7 @@ const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
             className="absolute inset-0"
           />
           <div className="absolute inset-0 bg-black opacity-30"></div>
-          <h2 className={`absolute top-5 left-5 text-white text-2xl text-left z-10 font-diatype ${isTwoColumn ? 'text-5xl' : ''} ${isThreeColumn ? 'left-3' : ''} ${isThreeColumn ? 'top-3' : ''}`}>
+          <h2 className={`absolute top-5 left-5 text-white text-2xl ${isTwoColumn ? 'text-5xl' : ''} ${isThreeColumn ? 'left-3 top-3' : ''}`}>
             {blok.headline}
           </h2>
         </div>
@@ -25,5 +25,6 @@ const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
     </div>
   );
 };
+
 
 export default Teaser;

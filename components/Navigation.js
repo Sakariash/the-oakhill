@@ -11,7 +11,7 @@ const Navigation = ({ story }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-32 h-10"> {/* Container for the logo */}
-            {story.header_logo && story.header_logo.filename && (
+            {/* {story.header_logo && story.header_logo.filename && (
               <Link href="/">
                 <a className="relative w-48 h-full">
                   <Image
@@ -23,7 +23,7 @@ const Navigation = ({ story }) => {
                   />
                 </a>
               </Link>
-            )}
+            )} */}
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button
@@ -94,7 +94,7 @@ const Navigation = ({ story }) => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  <Link href="/about">
+                  {/* <Link href="/about">
                     <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                       <span className="ml-3 text-base font-medium text-gray-900">
                         About
@@ -114,7 +114,7 @@ const Navigation = ({ story }) => {
                         Services
                       </span>
                     </a>
-                  </Link>
+                  </Link> */}
                 </nav>
               </div>
             </div>

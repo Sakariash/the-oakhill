@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react';
 
 const ThreeImages = ({ blok }) => {
   return (
-    <div {...storyblokEditable(blok)} className="relative h-screen mx-4 py-4 flex mb-6">
+    <div {...storyblokEditable(blok)} className="relative h-screen mx-4 mt-14 flex mb-6">
       {/* Desktop View */}
       <div className="relative flex-1 h-full hidden md:flex">
         <div
@@ -54,7 +54,7 @@ const ThreeImages = ({ blok }) => {
       </div>
 
       {/* Mobile/Tablet View */}
-      <div className="relative flex flex-col w-full min-h-full bg-blue-200 md:hidden">
+      <div className="relative flex flex-col w-full min-h-full lg:hidden">
         <div
           className="absolute top-0 w-full h-[calc(33.33%+2%)]"
           style={{ clipPath: 'polygon(0 0, 100% 0, 100% 87%, 0 100%)' }}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+// import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const FAQ = ({ blok }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -25,7 +25,7 @@ const FAQ = ({ blok }) => {
           >
             <h3 className="font-diatype text-left flex-1 text-lg md:text-2xl lg:text-4xl">{faq.question}</h3>
             <span className={`text-xl transition-transform duration-300 ease-in-out`}>
-              {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+              {/* {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />} */}
             </span>
           </div>
           <div className={`overflow-hidden text-left transition-all duration-300 ease-in-out w-2/3

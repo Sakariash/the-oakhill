@@ -8,7 +8,7 @@ import {
 
 export default function Page({ story, config }) {
   story = useStoryblokState(story);
- 
+  console.log('story.content in Slug ::>', story.content);
   return (
     <div >
       <Head>
