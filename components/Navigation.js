@@ -113,7 +113,7 @@ const Navigation = ({ story }) => {
             <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-700' : 'opacity-0'}`}>Blog</span>
           </Link>
           <Link href="/services" passHref>
-            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`}>Services</span>
+            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`}>Components</span>
           </Link>
         </nav>
         <footer className={`font-montserrat border-t border-gray-600 transition-opacity duration-1000 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`} aria-labelledby="footer-heading">
