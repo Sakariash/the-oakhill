@@ -40,6 +40,13 @@ module.exports = {
       },
       fontFamily: {
         diatype: ['Diatype', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
+      fontWeight: {
+        thin: 100,
+        extraLight: 200,
+        regular: 400,
+        bold: 700,
       },
     },
   },

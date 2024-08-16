@@ -70,8 +70,9 @@ const GenericForm = ({ blok }) => {
           };
     
           return (
-            <div {...storyblokEditable(blok)} className="max-w-4xl mx-auto font-diatype text-left p-6  shadow-lg rounded-lg border border-gray-200">
-              <h2 className="text-3xl font-diatype mb-6 text-gray-800">{blok.title || 'Contact Form'}</h2>
+            <div {...storyblokEditable(blok)} className=" relative max-w-4xl mx-auto font-montserrat text-left p-6 shadow-md rounded-lg border border-oakhill-green">
+             <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
+              <h2 className="font-montserrat mb-6  text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 ">{blok.title || 'Contact Form'}</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {blok.name && (
                   <div className="mb-4">
@@ -127,7 +128,7 @@ const GenericForm = ({ blok }) => {
                               value={option}
                               checked={formData.checklist.includes(option)}
                               onChange={handleChange}
-                              className="mr-2 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                              className="mr-2 h-5 w-5 text-blue-600 border-gray-300 border focus:ring-blue-500"
                             />
                             <label htmlFor={`checkbox-${index}`} className="text-gray-700">{option}</label>
                           </div>
@@ -152,7 +153,7 @@ const GenericForm = ({ blok }) => {
                     {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
                   </div>
                 )}
-                <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="submit" className="w-full bg-oakhill-green text-white py-2 rounded-lg hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                   Skicka
                 </button>
               </form>

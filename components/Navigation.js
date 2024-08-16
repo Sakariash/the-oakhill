@@ -6,24 +6,29 @@ import Image from "next/image";
 const Navigation = ({ story }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
+   // Ensure that story is defined and has the necessary properties
+   const headerLogo = story?.header_logo || {};
+   const headerMenu = story?.header_menu || [];
+
   return (
     <div className="relative border-b border-gray-600 mx-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-32 h-10"> {/* Container for the logo */}
-            {/* {story.header_logo && story.header_logo.filename && (
-              <Link href="/">
-                <a className="relative w-48 h-full">
-                  <Image
-                    src={story.header_logo.filename}
-                    layout="fill"
-                    objectFit="contain" // Ensure the image is contained within the container
-                    alt={story.header_logo.alt || 'Logo'}
-                    className="absolute inset-0"
-                  />
-                </a>
-              </Link>
-            )} */}
+            {headerLogo?.filename && (
+              <Link href="/" passHref>
+              <div className="relative w-48 h-full">
+                <Image
+                  src={headerLogo.filename}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
+                  alt={story.header_logo.alt || 'Logo'}
+                  className="absolute inset-0"
+                />
+              </div>
+            </Link>
+            )}
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button
@@ -94,27 +99,21 @@ const Navigation = ({ story }) => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  {/* <Link href="/about">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        About
-                      </span>
-                    </a>
-                  </Link>
-                  <Link href="/blog">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Blog
-                      </span>
-                    </a>
-                  </Link>
-                  <Link href="/services">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Services
-                      </span>
-                    </a>
-                  </Link> */}
+                <Link href="/about">
+                  <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">About</span>
+                  </span>
+                </Link>
+                <Link href="/blog">
+                  <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">Blog</span>
+                  </span>
+                </Link>
+                <Link href="/services">
+                  <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">Services</span>
+                  </span>
+                </Link>
                 </nav>
               </div>
             </div>

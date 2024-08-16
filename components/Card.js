@@ -25,23 +25,24 @@ const Card = ({ blok }) => {
         <Image
           src={blok.image.filename}
           alt={blok.image.alt || 'Image'}
-          layout="fill"
-          objectFit="cover"
+          fill 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: 'cover'}}
           className="transition-transform duration-1000"
         />
       </div>
       <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-100 group-hover:opacity-50 z-20"></div>
       <div className="absolute w-full bottom-0 left-0 z-30 text-white p-5 pb-4 flex flex-col space-y-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-1000">
-        <h2 className="absolute top-0 text-2xl text-left font-diatype transform -translate-y-12 group-hover:-translate-y-4 transition-transform duration-1000">
+        <h2 className="absolute top-0 text-2xl text-left font-montserrat transform -translate-y-12 group-hover:-translate-y-4 transition-transform duration-1000">
           {blok.headline}
         </h2>
         {hasInfo && (
-            <p className="text-base font-diatype text-left w-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+            <p className="text-base font-montserrat text-left w-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
             {blok.info}
           </p>
         )}
         {hasButton && (
-          <button className="mt-2 py-1 px-4 font-diatype bg-white border-2 text-black border-black rounded-lg transition-all duration-1000 hover:bg-violet-300 hover:text-black self-end opacity-0 group-hover:opacity-100">
+          <button className="mt-2 py-1 px-4 font-montserrat bg-white border-2 text-black border-black rounded-lg transition-all duration-1000 hover:bg-violet-300 hover:text-black self-end opacity-0 group-hover:opacity-100">
             See more
           </button>
         )}

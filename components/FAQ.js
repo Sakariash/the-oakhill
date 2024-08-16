@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
-// import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const FAQ = ({ blok }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -11,7 +11,7 @@ const FAQ = ({ blok }) => {
 
   return (
     <div {...storyblokEditable(blok)} className="w-auto mt-14">
-      <h2 className="text-7xl font-diatype mb-10 md:mx-[100px] text-left">FAQ</h2>
+      <h2 className="text-7xl font-montserrat mb-10 md:mx-[100px] text-left">FAQ</h2>
       {blok.questions.map((faq, index) => (
         <div 
           key={index} 
@@ -23,14 +23,14 @@ const FAQ = ({ blok }) => {
             className={"flex items-center cursor-pointer py-6"}
             onClick={() => toggleAnswer(index)}
           >
-            <h3 className="font-diatype text-left flex-1 text-lg md:text-2xl lg:text-4xl">{faq.question}</h3>
+            <h3 className="font-montserrat text-left flex-1 text-lg md:text-2xl lg:text-4xl">{faq.question}</h3>
             <span className={`text-xl transition-transform duration-300 ease-in-out`}>
-              {/* {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />} */}
+              {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </span>
           </div>
           <div className={`overflow-hidden text-left transition-all duration-300 ease-in-out w-2/3
             ${activeIndex === index ? 'max-h-full py-4' : 'max-h-0 py-0'}`}>
-            <p className="text-lg whitespace-pre-wrap">{faq.answer}</p>
+            <p className="text-lg whitespace-pre-wrap font-montserrat font-thin">{faq.answer}</p>
           </div>
         </div>
       ))}

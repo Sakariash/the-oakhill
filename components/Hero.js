@@ -23,8 +23,9 @@ const Hero = ({ blok }) => {
           <div className="relative w-full h-full">
             <Image
               src={blok.filename}
-              layout="fill"
-              objectFit="cover"
+              fill 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'cover'}}
               alt={blok.alt || 'Hero Image'}
               className="absolute inset-0"
             />

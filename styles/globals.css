@@ -3,10 +3,16 @@
 @tailwind utilities;
 @font-face {
   font-family: 'Diatype';
-  src: url('/fonts/ABCDiatype-Regular-Trail.woff2') format('woff2');
-  src: url('/fonts/ABCDiatype-Regular-Trail.woff') format('woff');
-  src: url('/fonts/ABCDiatype-Light-Trail.woff') format('woff');
-  src: url('/fonts/ABCDiatype-Light-Trail.woff2') format('woff2');
+  src: url('/fonts/ABCDiatype-Regular-Trail.woff2') format('woff2'),
+       url('/fonts/ABCDiatype-Regular-Trail.woff') format('woff'),
+       url('/fonts/ABCDiatype-Light-Trail.woff2') format('woff2'),
+       url('/fonts/ABCDiatype-Light-Trail.woff') format('woff'),
+       url('/fonts/ABCDiatype-Bold-Trail.woff2') format('woff2'),
+       url('/fonts/ABCDiatype-Bold-Trail.woff') format('woff'),
+       url('/fonts/ABCDiatype-Heavy-Trail.woff2') format('woff2'),
+       url('/fonts/ABCDiatype-Heavy-Trail.woff') format('woff'),
+       url('/fonts/ABCDiatype-Medium-Trail.woff2') format('woff2'),
+       url('/fonts/ABCDiatype-Medium-Trail.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +22,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, 'Diatype', sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, 'Diatype', 'Montserrat' sans-serif;
 }
 
 a {

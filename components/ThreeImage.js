@@ -15,8 +15,9 @@ const ThreeImages = ({ blok }) => {
               <Image
                 src={blok.Images[0].image.filename}
                 alt={blok.Images[0].image.alt || 'First Image'}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'cover'}}
               />
             </div>
           )}
@@ -30,8 +31,9 @@ const ThreeImages = ({ blok }) => {
               <Image
                 src={blok.Images[1].image.filename}
                 alt={blok.Images[1].image.alt || 'Second Image'}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'cover'}}
               />
             </div>
           )}
@@ -45,8 +47,9 @@ const ThreeImages = ({ blok }) => {
               <Image
                 src={blok.Images[2].image.filename}
                 alt={blok.Images[2].image.alt || 'Third Image'}
-                layout="fill"
-                objectFit="cover"
+               fill
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+               style={{ objectFit: 'cover'}}
               />
             </div>
           )}
@@ -63,8 +66,9 @@ const ThreeImages = ({ blok }) => {
             <Image
               src={blok.Images[0].image.filename}
               alt={blok.Images[0].image.alt || 'First Image'}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'cover'}}
             />
           )}
         </div>
@@ -76,8 +80,9 @@ const ThreeImages = ({ blok }) => {
             <Image
               src={blok.Images[1].image.filename}
               alt={blok.Images[1].image.alt || 'Second Image'}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'cover'}}
             />
           )}
         </div>
@@ -89,8 +94,9 @@ const ThreeImages = ({ blok }) => {
             <Image
               src={blok.Images[2].image.filename}
               alt={blok.Images[2].image.alt || 'Third Image'}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'cover'}}
             />
           )}
         </div>

@@ -8,8 +8,9 @@ const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
         <div className={`relative w-full h-0 pb-[100%] ${isTwoColumn ? 'pb-[100%]' : ''}`}>
           <Image
             src={blok.image.filename}
-            layout="fill"
-            objectFit="cover"
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover'}}
             alt={blok.image.alt || 'Image'}
             className="absolute inset-0"
           />
@@ -20,7 +21,7 @@ const Teaser = ({ blok, isTwoColumn = false, isThreeColumn = false }) => {
         </div>
       )}
       <div className="py-4 pr-4 bg-white border-black w-full">
-        <p className="text-left font-diatype text-lg">{blok.info}</p>
+        <p className="text-left font-montserrate text-lg">{blok.info}</p>
       </div>
     </div>
   );

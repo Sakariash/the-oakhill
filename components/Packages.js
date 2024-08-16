@@ -10,7 +10,7 @@ const Packages = ({ blok }) => {
     };
 
   return (
-    <div {...storyblokEditable(blok)} className="px-4 mt-14 md:py-16 font-diatype">
+    <div {...storyblokEditable(blok)} className="px-4 mt-14 md:py-16 font-montserrat">
       <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8">
         
         {/* Quick Launch Package */}
@@ -18,7 +18,7 @@ const Packages = ({ blok }) => {
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Quick Launch</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
                 {/* <FaCheck className="text-oakhill-green mr-3" /> */}
                 Mobilanpassad
@@ -55,7 +55,7 @@ const Packages = ({ blok }) => {
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Professional</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
                 {/* <FaCheck className="text-oakhill-green mr-3" /> */}
                 Mobilanpassad
@@ -116,7 +116,7 @@ const Packages = ({ blok }) => {
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Tailored</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
                 {/* <FaCheck className="text-oakhill-green mr-3" /> */}
                 Mobilanpassad

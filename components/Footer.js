@@ -4,10 +4,10 @@ import { storyblokEditable } from '@storyblok/react';
 const Footer = ({story}) => {
 
 return (
-<footer className="font-diatype border-t border-gray-600 mt-32 p-8 md:px-48" aria-labelledby="footer-heading">
+<footer className="font-montserrat border-t border-gray-600 mt-32 p-8 md:px-48" aria-labelledby="footer-heading">
   <div className="grid grid-cols-4 md:grid-cols-8 gap-y-8">
     <div className="col-span-4 md:col-span-6">
-      <h2 id="footer-heading" className="text-6xl lg:text-8xl mb-4 font-bold">Let's Talk!</h2>
+      <h2 id="footer-heading" className="text-6xl lg:text-8xl mb-4 font-bold">Let's Talk</h2>
         <a className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@oakhill.com">
           <span className="text-xl md:text-2xl underline underline-offset-8">hello@oakhill.com</span>
           <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>

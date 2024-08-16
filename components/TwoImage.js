@@ -15,8 +15,9 @@ const TwoImages = ({ blok }) => {
               <Image
                 src={blok.Images[0].image.filename}
                 alt={blok.Images[0].image.alt || 'First Image'}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                style={{ objectFit: 'cover'}}
               />
             </div>
           )}
@@ -30,8 +31,9 @@ const TwoImages = ({ blok }) => {
               <Image
                 src={blok.Images[1].image.filename}
                 alt={blok.Images[1].image.alt || 'Second Image'}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                style={{ objectFit: 'cover'}}
               />
             </div>
           )}
@@ -48,8 +50,9 @@ const TwoImages = ({ blok }) => {
             <Image
               src={blok.Images[0].image.filename}
               alt={blok.Images[0].image.alt || 'First Image'}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              style={{ objectFit: 'cover'}}
             />
           )}
         </div>
@@ -61,8 +64,9 @@ const TwoImages = ({ blok }) => {
             <Image
               src={blok.Images[1].image.filename}
               alt={blok.Images[1].image.alt || 'Second Image'}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              style={{ objectFit: 'cover'}}
             />
           )}
         </div>

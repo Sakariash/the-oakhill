@@ -50,12 +50,13 @@ storyblokInit({
 
 function MyApp({ Component, pageProps }) { 
   const isHomePage = pageProps.story && pageProps.story.full_slug === 'home'; // Check if it's the homepage
-  const story = pageProps.story || {};
+  const {key, ...props} = pageProps;
+  
   return (
     // <ProtectedRoute>
       <Layout story={pageProps.config}>
       {isHomePage && <Hero blok={pageProps.story.content.hero} />} {/* Render Hero only on homepage */}
-      <Component {...pageProps} />
+      <Component key={key} {...props} />
       </Layout>
     // </ProtectedRoute>
   );
