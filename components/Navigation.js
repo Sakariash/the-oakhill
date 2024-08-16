@@ -12,7 +12,7 @@ const Navigation = ({ story }) => {
 
   return (
     <div className="relative border-b border-gray-600 md:mx-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className=" mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-32 h-10"> {/* Container for the logo */}
             {headerLogo?.filename && (
@@ -66,15 +66,15 @@ const Navigation = ({ story }) => {
         }`}
       >
         <div className="flex justify-between items-center mb-6">
-        <div className="flex cursor-auto relative w-32 h-10"> {/* Container for the logo */}
+        <div className="flex cursor-auto relative "> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
                 <div className="relative w-48 h-full">
                   <Image
                     src={headerLogo.filename}
                     fill
-                    sizes="max-width: 120px"
-                    style={{ objectFit: 'contain' }}
+                    sizes="max-width: 300px"
+                    style={{ objectFit: 'cover' }}
                     alt={story.header_logo.alt || 'Logo'} 
                   />
                 </div>

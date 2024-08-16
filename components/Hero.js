@@ -24,10 +24,11 @@ const Hero = ({ blok }) => {
             <Image
               src={blok.filename}
               fill 
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'cover'}}
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'contain'}}
               alt={blok.alt || 'Hero Image'}
               className="absolute inset-0"
+              priority 
             />
             {blok.headline && (
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">

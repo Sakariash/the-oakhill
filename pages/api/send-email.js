@@ -3,7 +3,8 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, lastname, address, description, checklist } = req.body;
-
+    console.log('SMTP_HOST:', process.env.SMTP_HOST);
+    console.log('SMTP_USER:', process.env.SMTP_USER);
     // Nodemailer transporter configuration
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,

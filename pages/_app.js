@@ -53,12 +53,12 @@ function MyApp({ Component, pageProps }) {
   const {key, ...props} = pageProps;
   
   return (
-    // <ProtectedRoute>
+    <ProtectedRoute>
       <Layout story={pageProps.config}>
       {isHomePage && <Hero blok={pageProps.story.content.hero} />} {/* Render Hero only on homepage */}
       <Component key={key} {...props} />
       </Layout>
-    // </ProtectedRoute>
+    </ProtectedRoute>
   );
 }
 
