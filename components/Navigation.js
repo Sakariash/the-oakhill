@@ -14,7 +14,7 @@ const Navigation = ({ story }) => {
     <div className="relative border-b border-gray-600 md:mx-10">
       <div className=" mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-32 h-10"> {/* Container for the logo */}
+          <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-40 h-9"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
                 <div className="relative w-48 h-full">
@@ -66,16 +66,17 @@ const Navigation = ({ story }) => {
         }`}
       >
         <div className="flex justify-between items-center mb-6">
-        <div className="flex cursor-auto relative "> {/* Container for the logo */}
+        <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-40 h-9"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
                 <div className="relative w-48 h-full">
                   <Image
                     src={headerLogo.filename}
                     fill
-                    sizes="max-width: 300px"
-                    style={{ objectFit: 'cover' }}
-                    alt={story.header_logo.alt || 'Logo'} 
+                    sizes="(max-width: 150px)"
+                    style={{ objectFit: 'contain' }}
+                    alt={story.header_logo.alt || 'Logo'}
+                    className="absolute inset-0"
                   />
                 </div>
               </Link>
@@ -104,7 +105,7 @@ const Navigation = ({ story }) => {
             </svg>
           </button>
         </div>
-        <nav className="flex-grow flex flex-col space-y-2 ">
+        <nav className="flex-grow flex flex-col space-y-2 mt-14">
           {/* Add a delay to the appearance of each item */}
           <Link href="/about" passHref>
             <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-500' : 'opacity-0'}`}>About</span>

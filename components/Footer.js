@@ -17,12 +17,12 @@ return (
       <ul role="list" className="w-1/2 space-y-4">
         <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900">Work
            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">Components<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+           <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">About<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">Blog<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
       </ul>
       <ul role="list" className="w-1/2 space-y-4">
         <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">Clients<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">About<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+        <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">Components<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a href="#" className="text-sm md:text-lg relative group hover:text-gray-900 ">Contact<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
       </ul>
     </div>
