@@ -1,6 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import { useRouter } from 'next/router';
-// import { FaCheck } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 
 const Packages = ({ blok }) => {
     const router = useRouter();
@@ -17,30 +17,30 @@ const Packages = ({ blok }) => {
         <div onClick={handleClick} className="relative shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
-            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Quick Launch</h3>
+            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Baspaket</h3>
             <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Mobilanpassad
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Kontaktformulär
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Anpassad design
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Upp till 4st undersidor
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 CMS
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 1h kostnadsfria möten
               </li>
             </ul>
@@ -54,55 +54,51 @@ const Packages = ({ blok }) => {
         <div onClick={handleClick} className="relative bg-white rounded-lg shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
-            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Professional</h3>
+            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Utökat paket</h3>
             <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Mobilanpassad
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Kontaktformulär
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Anpassad design
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Upp till 4st undersidor
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 CMS
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
+                4h kostnadsfria möten
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
                 Domän
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                Serviceavtal 1 månad
-              </li>
-              <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Webbhotell
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                SSL Certifikat
-              </li>
-              <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Blogg
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                SEO
+                <FaCheck className="text-oakhill-green mr-3" />
+                SEO-lite
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                4h kostnadsfria möten
+                <FaCheck className="text-oakhill-green mr-3" />
+                Serviceavtal 1 månad
               </li>
             </ul>
           </div>
@@ -115,55 +111,55 @@ const Packages = ({ blok }) => {
         <div onClick={handleClick} className="relative bg-white rounded-lg shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
           <div className="p-6 flex-1">
-            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Tailored</h3>
+            <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Premium</h3>
             <ul className="space-y-3 font-light">
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Mobilanpassad
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Kontaktformulär
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                Digital design
+                <FaCheck className="text-oakhill-green mr-3" />
+                Digital designer
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                Undersida
+                <FaCheck className="text-oakhill-green mr-3" />
+                Obegränsade undersidor
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 CMS
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
+                8h kostnadsfria möten
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
                 Domän
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Webbhotell
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                SSL Certifikat
-              </li>
-              <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Blogg
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                SEO
+                <FaCheck className="text-oakhill-green mr-3" />
+                SEO-premium
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
+                <FaCheck className="text-oakhill-green mr-3" />
                 Serviceavtal 3 månader
               </li>
               <li className="flex items-center text-gray-700">
-                {/* <FaCheck className="text-oakhill-green mr-3" /> */}
-                8h kostnadsfria möten
+                <FaCheck className="text-oakhill-green mr-3" />
+                SSL Certifikat
               </li>
             </ul>
           </div>
