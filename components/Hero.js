@@ -1,44 +1,21 @@
 import Image from 'next/image';
 import { storyblokEditable } from '@storyblok/react';
-import { useEffect, useState } from 'react';
 
 const Hero = ({ blok }) => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    // Set up a timer to hide the component after 4 seconds
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!blok) return null; // If no blok data, do not render anything
 
   return (
-    isVisible && (
-      <div {...storyblokEditable(blok)} className={`relative w-full h-[70vh] ${isVisible ? 'animate-fadeInOut' : 'hidden'}`}>
-        {blok.filename && (
-          <div className="relative w-full h-full">
-            <Image
-              src={blok.filename}
-              fill 
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'contain'}}
-              alt={blok.alt || 'Hero Image'}
-              className="absolute inset-0"
-              priority 
-            />
-            {blok.headline && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                <h1 className="text-white text-4xl font-bold text-center">{blok.headline}</h1>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    )
+    <div {...storyblokEditable(blok)} className="relative w-full md:h-[70vh] grid grid-cols-12 grid-rows-12 font-montserrat">
+      {blok.headline && (
+        <div className="col-start-2 col-end-12 row-start-1 row-end-5 md:row-start-2 lg:col-start-2 lg:col-end-11  lg:row-end-5 2xl:col-start-2 2xl:col-end-9 2xl:row-end-5 text-left">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold">{blok.headline}</h1>
+        </div>
+      )}
+      {blok.tagline && (
+        <div className="col-start-4 col-end-12 row-start-6 row-end-12 md:col-start-6 lg:col-end-12 lg:row-start-7 lg:row-end-11 2xl:col-start-7 2xl:col-end-12 2xl:row-start-6 2xl:row-end-11 text-left">
+          <h2 className="md:text-xl lg:text-2xl 2xl:text-3xl">{blok.tagline}</h2>
+        </div>
+      )}
+    </div>
   );
 };
 
