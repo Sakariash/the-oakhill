@@ -10,7 +10,7 @@ const FAQ = ({ blok }) => {
   };
 
   return (
-    <div {...storyblokEditable(blok)} className="w-auto mt-14">
+    <div {...storyblokEditable(blok)} className="w-auto mt-14 mx-2">
       <h2 className="text-7xl font-montserrat mb-10 md:mx-[100px] text-left">FAQ</h2>
       {blok.questions.map((faq, index) => (
         <div 
@@ -28,7 +28,7 @@ const FAQ = ({ blok }) => {
               {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </span>
           </div>
-          <div className={`overflow-hidden text-left transition-all duration-300 ease-in-out w-2/3
+          <div className={`overflow-hidden text-left transition-all duration-300 ease-in-out md:w-2/3
             ${activeIndex === index ? 'max-h-full py-4' : 'max-h-0 py-0'}`}>
             <p className="text-lg whitespace-pre-wrap font-montserrat font-thin">{faq.answer}</p>
           </div>
