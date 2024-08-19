@@ -15,9 +15,11 @@ import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
 import Hero from "../components/Hero";
-import ProtectedRoute from "../components/ProtectedRoute";
+// import ProtectedRoute from "../components/ProtectedRoute";
 import FAQ from "../components/FAQ";
 import Packages from "../components/Packages";
+import Statistic from "../components/Statistic";
+import TextContent from "../components/TextContent";
 
 const components = {
   feature: Feature,
@@ -37,6 +39,8 @@ const components = {
   hero: Hero,
   faq: FAQ,
   packages: Packages,
+  statistic: Statistic,
+  textContent: TextContent,
 };
 
 storyblokInit({
@@ -53,12 +57,12 @@ function MyApp({ Component, pageProps }) {
   const {key, ...props} = pageProps;
   
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <Layout story={pageProps.config}>
-      {isHomePage && <Hero blok={pageProps.story.content.hero} />} {/* Render Hero only on homepage */}
+      {/* {isHomePage && <Hero blok={pageProps.story.content.hero} />} */}
       <Component key={key} {...props} />
       </Layout>
-    </ProtectedRoute>
+    // </ProtectedRoute>
   );
 }
 
