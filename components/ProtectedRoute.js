@@ -1,15 +1,15 @@
-// components/ProtectedRoute.js
-import { useState } from 'react';
-import LoginPage from './LoginPage';
+// // components/ProtectedRoute.js
+// import { useState } from 'react';
+// import LoginPage from './LoginPage';
 
-const ProtectedRoute = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+// const ProtectedRoute = ({ children }) => {
+//   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  if (!isAuthenticated) {
-    return <LoginPage onLogin={setIsAuthenticated} />;
-  }
+//   if (!isAuthenticated) {
+//     return <LoginPage onLogin={setIsAuthenticated} />;
+//   }
 
-  return children;
-};
+//   return children;
+// };
 
-export default ProtectedRoute;
+// export default ProtectedRoute;
