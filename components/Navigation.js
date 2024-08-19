@@ -108,19 +108,19 @@ const Navigation = ({ story }) => {
         <nav className="flex-grow flex flex-col space-y-2 mt-14">
           {/* Add a delay to the appearance of each item */}
           <Link href="/about" passHref>
-            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-500' : 'opacity-0'}`}>About</span>
+            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-500' : 'opacity-0'}`}>Om oss</span>
           </Link>
-          <Link href="/blog" passHref>
-            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-700' : 'opacity-0'}`}>Blog</span>
+          <Link href="/contact" passHref>
+            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-700' : 'opacity-0'}`}>Kontakt</span>
           </Link>
-          <Link href="/services" passHref>
+          {/* <Link href="/services" passHref>
             <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`}>Components</span>
-          </Link>
+          </Link> */}
         </nav>
         <footer className={`font-montserrat border-t border-gray-600 transition-opacity duration-1000 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`} aria-labelledby="footer-heading">
           <div className="grid grid-cols-4 gap-y-8">
             <div className="col-span-4">
-              <h2 id="footer-heading" className="text-md font-light mt-4">Let's Talk</h2>
+              <h2 id="footer-heading" className="text-md font-light mt-4">Hey!</h2>
               <a className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@oakhill.com">
                 <span className="text-2xl underline underline-offset-8">hello@theoakhill.se</span>
                 <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
@@ -133,10 +133,10 @@ const Navigation = ({ story }) => {
               </a>
             </div>
             <div className="col-span-2 flex space-x-8 mt-4">
-              <span className="text-sm text-gray-500 relative group hover:text-gray-900">Privacy
+              <a href='/privacy' className="text-sm text-gray-500 relative group hover:text-gray-900">Integritetspolicy
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
-              </span>
-              <span className="text-sm text-gray-500 relative group hover:text-gray-900">Terms
+              </a>
+              <span className="text-sm text-gray-500 relative group hover:text-gray-900">Användarvillkor
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
               </span>
               <span className="text-sm text-gray-500 relative group hover:text-gray-900">Sitemap

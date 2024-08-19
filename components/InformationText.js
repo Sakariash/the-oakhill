@@ -1,16 +1,23 @@
 import { storyblokEditable } from '@storyblok/react';
 
 const InformationText = ({ blok }) => {
+  console.log('blok', blok.headline)
   return (
-    <div {...storyblokEditable(blok)} className="w-full my-24 px-4 md:px-8 lg:px-16 bg-oakhill-green">
-      <div className="container mx-auto max-w-7xl h-auto flex flex-col justify-center py-16 md:py-22 lg:py-32">
-        <h2 className="text-4xl font-montserrat md:text-6xl lg:text-8xl text-left mb-6 md:mb-8 lg:mb-10">
-          {blok.headling}
+    <div {...storyblokEditable(blok)} className="mt-14 py-9 relative w-full md:h-[50vh] grid grid-cols-12 grid-rows-12 bg-oakhill-green font-montserrat">
+      {blok.headline && (
+  <div className="col-start-2 col-end-12 row-start-1 row-end-5 md:row-start-2 lg:col-start-2 lg:col-end-11  lg:row-end-5 2xl:col-start-2 2xl:col-end-9 2xl:row-end-5 text-left">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl">
+          {blok.headline}
         </h2>
-        <p className="text-base font-montserrat font-light md:text-lg lg:text-xl max-w-prose text-left mx-4 md:mx-8 lg:mx-16">
-          {blok.informaiton}
+        </div>
+)}{blok.information && (
+  <div className="col-start-4 col-end-12 row-start-6 row-end-12 md:col-start-6 lg:col-end-12 lg:row-start-7 lg:row-end-11 2xl:col-start-7 2xl:col-end-12 2xl:row-start-6 2xl:row-end-11 text-left">
+        <p className="md:text-xl lg:text-2xl 2xl:text-3xl">
+          {blok.information}
         </p>
-      </div>
+        
+        </div>
+)}
     </div>
   );
 };
