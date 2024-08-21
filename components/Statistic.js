@@ -48,8 +48,8 @@ const StatisticItem = ({ number, description }) => {
   }, [number]);
 
   return (
-    <div className='my-14 w-1/3'>
-      <h3 className="text-4xl md:text-5xl text-gray-500">{count}%</h3>
+    <div className='my-14 w-1/3 bg-oakhill-green py-5'>
+      <h3 className="text-4xl md:text-5xl ">{count}%</h3>
       <p className="text-sm md:text-base mt-2">{description}</p>
     </div>
   );
