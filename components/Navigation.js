@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const Navigation = ({ story }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const closeMenu = () => setOpenMenu(false);
 
   // Ensure that story is defined and has the necessary properties
   const headerLogo = story?.header_logo || {};
@@ -108,10 +109,10 @@ const Navigation = ({ story }) => {
         <nav className="flex-grow flex flex-col space-y-2 mt-14">
           {/* Add a delay to the appearance of each item */}
           <Link href="/about" passHref>
-            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-500' : 'opacity-0'}`}>Om oss</span>
+            <span onClick={closeMenu} className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-500' : 'opacity-0'}`}>Om oss</span>
           </Link>
           <Link href="/contact" passHref>
-            <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-700' : 'opacity-0'}`}>Kontakt</span>
+            <span onClick={closeMenu} className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-700' : 'opacity-0'}`}>Kontakt</span>
           </Link>
           {/* <Link href="/services" passHref>
             <span className={`text-3xl font-medium text-gray-900 transition-opacity duration-200 ease-in-out ${openMenu ? 'opacity-100 delay-1000' : 'opacity-0'}`}>Components</span>
@@ -121,32 +122,30 @@ const Navigation = ({ story }) => {
           <div className="grid grid-cols-4 gap-y-8">
             <div className="col-span-4">
               <h2 id="footer-heading" className="text-md font-light mt-4">Hey!</h2>
-              <a className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@oakhill.com">
+              <a onClick={closeMenu} className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@oakhill.com">
                 <span className="text-2xl underline underline-offset-8">hello@theoakhill.se</span>
                 <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
               </a>
             </div>
             <div className="col-span-4 mt-8">
-              <a className="relative group" target="_blank" rel="noreferrer noopener" href="https://maps.app.goo.gl/PbxprJKHBRjWAaHK8">
+              <a onClick={closeMenu} className="relative group" target="_blank" rel="noreferrer noopener" href="https://maps.app.goo.gl/PbxprJKHBRjWAaHK8">
                 <span className="underline underline-offset-8">Varmfrontsgata 12, 418 43 Göteborg</span>
                 <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
               </a>
             </div>
-            <div className="col-span-2 flex space-x-8 mt-4">
-              <a href='/privacy' className="text-sm text-gray-500 relative group hover:text-gray-900">Integritetspolicy
+            <div className="col-span-2 flex flex-wrap mt-4">
+              <a onClick={closeMenu} href='/privacy' className="text-sm text-gray-500 relative group hover:text-gray-900">Integritetspolicy
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
               </a>
-              <span className="text-sm text-gray-500 relative group hover:text-gray-900">Användarvillkor
+              <span onClick={closeMenu} className="text-sm text-gray-500 relative group hover:text-gray-900">Användarvillkor
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
               </span>
-              <span className="text-sm text-gray-500 relative group hover:text-gray-900">Sitemap
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
-              </span>
-            </div>
-            <div className="text-sm col-span-2 place-content-end flex text-gray-500 mt-4">
-              <span>© 2024, Oakhill</span>
+
             </div>
           </div>
+            <div className="text-sm col-span-2 place-content-end flex text-gray-500 mt-4">
+              <span>© 2024, The Oakhill</span>
+            </div>
         </footer>
       </div>
     </div>
