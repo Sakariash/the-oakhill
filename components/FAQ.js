@@ -10,7 +10,7 @@ const FAQ = ({ blok }) => {
   };
 
   return (
-    <div {...storyblokEditable(blok)} className="w-auto mt-14 mx-2">
+    <div {...storyblokEditable(blok)} className="w-auto mt-28 mx-2">
       <h2 className="text-7xl font-montserrat mb-10 md:mx-[100px] text-left">FAQ</h2>
       {blok.questions.map((faq, index) => (
         <div 
