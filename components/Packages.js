@@ -10,12 +10,12 @@ const Packages = ({ blok }) => {
     };
 
   return (
-    <div {...storyblokEditable(blok)} className="px-4 mt-14 md:py-16 font-montserrat">
+    <div {...storyblokEditable(blok)} className="px-4 mt-28 font-montserrat">
       <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8">
         
         {/* Quick Launch Package */}
         <div onClick={handleClick} className="relative shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
-          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green "></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Baspaket</h3>
             <ul className="space-y-3 font-light">
@@ -52,7 +52,7 @@ const Packages = ({ blok }) => {
 
         {/* Professional Package */}
         <div onClick={handleClick} className="relative bg-white rounded-lg shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
-          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green "></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Utökat paket</h3>
             <ul className="space-y-3 font-light">
@@ -108,8 +108,8 @@ const Packages = ({ blok }) => {
         </div>
 
         {/* Tailored Package */}
-        <div onClick={handleClick} className="relative bg-white rounded-lg shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
-          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
+        <div onClick={handleClick} className="relative flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col hover:border-l hover:border-r hover:shadow-md">
+          <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green"></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Premium</h3>
             <ul className="space-y-3 font-light">
@@ -163,7 +163,7 @@ const Packages = ({ blok }) => {
               </li>
             </ul>
           </div>
-          <div className="p-6 border-t-2 border-oakhill-green text-center text-gray-900">
+          <div className="p-6 border-t-2 border-b-2 border-oakhill-green text-center text-gray-900">
             19,990 SEK exkl. moms
           </div>
         </div>

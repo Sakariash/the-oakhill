@@ -4,7 +4,7 @@ import { storyblokEditable } from '@storyblok/react';
 const Footer = ({story}) => {
 
 return (
-<footer className="font-montserrat border-t border-gray-600 mt-32 p-8 md:px-48" aria-labelledby="footer-heading">
+<footer className="font-montserrat border-t border-gray-600 mt-28 p-8 md:px-48" aria-labelledby="footer-heading">
   <div className="grid grid-cols-4 md:grid-cols-8 gap-y-8">
     <div className="col-span-4 md:col-span-6">
       <h2 id="footer-heading" className="text-6xl lg:text-8xl mb-4 font-bold">Hey!</h2>
