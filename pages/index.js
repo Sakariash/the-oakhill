@@ -7,12 +7,6 @@ export default function Home({ story, config }) {
   
   return (
     <div>
-      <Head>
-        <title>The Oakhill - Design & Solutions</title>
-        <link rel="icon" href="/favicon.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap" rel="stylesheet"/>
-      </Head>
         <StoryblokComponent blok={story.content} />
     </div>
   );
