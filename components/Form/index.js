@@ -89,8 +89,8 @@ const GenericForm = ({ blok }) => {
   };
 
   return (
-    <div {...storyblokEditable(blok)} className="relative max-w-4xl mx-3 md:mx-auto font-montserrat text-left p-6 shadow-md rounded-lg border border-oakhill-green">
-      <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green rounded-t-lg"></div>
+    <div {...storyblokEditable(blok)} className="relative max-w-4xl mx-3 mt-28 md:mx-auto font-montserrat text-left p-6  rounded-lg ">
+      <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green "></div>
       <h2 className="font-montserrat mb-6 text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4">
         {blok.title || 'Kontakta oss'}
       </h2>
