@@ -6,7 +6,7 @@ const Card = ({ blok }) => {
   const hasButton = true; //Fix storyblok - Should button be required?
   
   return (
-    <div {...storyblokEditable(blok)} className="relative h-96 bg-black rounded-md overflow-hidden transition-transform duration-1000 hover:scale-95 group">
+    <div {...storyblokEditable(blok)} className="relative h-96 overflow-hidden transition-transform duration-1000 hover:scale-95 group">
       {/* <ul className="absolute right-2 top-0 flex flex-col items-center justify-center z-40 rounded-lg p-2 opacity-0 transform translate-x-full transition-all duration-250 group-hover:opacity-100 group-hover:translate-x-0">
         <li className="bg-white w-10 h-10 flex items-center justify-center cursor-pointer opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:transform translate-x-1 translate-y-1 rounded-lg mb-1">
           <i className='bx bx-drink text-xl text-black'></i>
@@ -37,13 +37,13 @@ const Card = ({ blok }) => {
           {blok.headline}
         </h2>
         {hasInfo && (
-            <p className="text-base font-montserrat text-left w-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+            <p className="text-base text-red-500 font-montserrat text-left w-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
             {blok.info}
           </p>
         )}
         {hasButton && (
           <button className="mt-2 py-1 px-4 font-montserrat bg-white border-2 text-black border-black rounded-lg transition-all duration-1000 hover:bg-violet-300 hover:text-black self-end opacity-0 group-hover:opacity-100">
-            See more
+            Se mer
           </button>
         )}
         </div>
