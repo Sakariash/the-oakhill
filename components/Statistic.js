@@ -17,7 +17,7 @@ const Statistic = ({ blok }) => {
   );
 
   return (
-    <div className="flex md:flex-wrap justify-center font-montserrat" {...storyblokEditable()}>
+    <div className="flex flex-col md:flex-wrap md:flex-row font-montserrat mt-14" {...storyblokEditable()}>
       {numbers.map((num, index) => (
         <StatisticItem key={index} number={num.value} description={num.description} />
       ))}
@@ -48,8 +48,8 @@ const StatisticItem = ({ number, description }) => {
   }, [number]);
 
   return (
-    <div className='mt-14 w-1/3 bg-oakhill-green py-5'>
-      <h3 className="text-4xl md:text-5xl ">{count}%</h3>
+    <div className='flex flex-row  md:flex-col md:w-1/3 bg-oakhill-green py-5'>
+      <h3 className="text-4xl md:text-5xl mr-5 border-r border-r-2 px-5 border-black md:border-none">{count}% </h3>
       <p className="text-sm md:text-base mt-2">{description}</p>
     </div>
   );
