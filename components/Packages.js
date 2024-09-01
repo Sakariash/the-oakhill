@@ -103,10 +103,10 @@ const Packages = ({ blok }) => {
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
                 Blogg
+              </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
                 Serviceavtal 1 månad
-              </li>
               </li>
             </ul>
           </div>
