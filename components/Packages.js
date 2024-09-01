@@ -41,7 +41,19 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                1h kostnadsfria möten
+                Grundläggande SEO
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
+                Domän & Hosting
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
+                3h kostnadsfria möten
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
+                Serviceavtal 1 månad
               </li>
             </ul>
           </div>
@@ -51,7 +63,7 @@ const Packages = ({ blok }) => {
         </div>
 
         {/* Professional Package */}
-        <div onClick={handleClick} className="relative bg-white rounded-lg shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
+        <div onClick={handleClick} className="relative shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green "></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Utökat paket</h3>
@@ -78,27 +90,23 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
+                Utökad SEO
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
+                Domän & Hosting
+              </li>
+              <li className="flex items-center text-gray-700">
+                <FaCheck className="text-oakhill-green mr-3" />
                 4h kostnadsfria möten
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                Domän
-              </li>
-              <li className="flex items-center text-gray-700">
-                <FaCheck className="text-oakhill-green mr-3" />
-                Webbhotell
-              </li>
-              <li className="flex items-center text-gray-700">
-                <FaCheck className="text-oakhill-green mr-3" />
                 Blogg
-              </li>
-              <li className="flex items-center text-gray-700">
-                <FaCheck className="text-oakhill-green mr-3" />
-                SEO-lite
-              </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
                 Serviceavtal 1 månad
+              </li>
               </li>
             </ul>
           </div>
@@ -108,7 +116,7 @@ const Packages = ({ blok }) => {
         </div>
 
         {/* Tailored Package */}
-        <div onClick={handleClick} className="relative flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col hover:border-l hover:border-r hover:shadow-md">
+        <div onClick={handleClick} className="relative shadow-md flex-1 transform hover:scale-105 transition-transform duration-300 cursor-pointer flex flex-col">
           <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green"></div>
           <div className="p-6 flex-1">
             <h3 className="text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4 mb-4">Premium</h3>
@@ -123,7 +131,7 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                Digital designer
+                Skräddarsydd design
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
@@ -135,15 +143,15 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                8h kostnadsfria möten
+                Omfattande SEO
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                Domän
+                Domän & Hosting
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                Webbhotell
+                6h kostnadsfria möten
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
@@ -151,19 +159,11 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-green mr-3" />
-                SEO-premium
-              </li>
-              <li className="flex items-center text-gray-700">
-                <FaCheck className="text-oakhill-green mr-3" />
                 Serviceavtal 3 månader
-              </li>
-              <li className="flex items-center text-gray-700">
-                <FaCheck className="text-oakhill-green mr-3" />
-                SSL Certifikat
               </li>
             </ul>
           </div>
-          <div className="p-6 border-t-2 border-b-2 border-oakhill-green text-center text-gray-900">
+          <div className="p-6 border-t-2  border-oakhill-green text-center text-gray-900">
             19,990 SEK exkl. moms
           </div>
         </div>
