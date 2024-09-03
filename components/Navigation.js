@@ -13,9 +13,9 @@ const Navigation = ({ story }) => {
 
   return (
     <div className="relative border-b border-gray-600 md:mx-10">
-      <div className=" mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-40 h-9"> {/* Container for the logo */}
+      <div className=" mx-auto pr-4 sm:pr-6">
+        <div className="flex justify-between items-center py-1 md:justify-start ">
+          <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-24"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
                 <div className="relative w-48 h-full">
@@ -23,8 +23,8 @@ const Navigation = ({ story }) => {
                     src={headerLogo.filename}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'contain' }}
-                    alt={story.header_logo.alt || 'Logo'}
+                    style={{ objectFit: 'none' }}
+                    alt={story.header_logo.alt || 'The Oakhill Logo'}
                     className="absolute inset-0"
                   />
                 </div>
