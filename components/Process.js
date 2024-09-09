@@ -12,7 +12,7 @@ const Process = ({ blok }) => {
   ];
 
   return (
-    <div {...storyblokEditable()} className="flex flex-col items-center mt-14 px-4 font-montserrat">
+    <div {...storyblokEditable()} className="flex flex-col items-center mt-14 px-4 font-montserrat md:px-48">
       <h2 className="text-6xl mt-14">Hur fungerar det?</h2>
       <div className="flex items-center mt-14">
         {steps.map((step, index) => (
@@ -21,7 +21,7 @@ const Process = ({ blok }) => {
               <div className="w-20 h-20 border border-oakhill-green rounded-full flex items-center justify-center text-2xl text-gray-800">
                 {step.value}
               </div>
-              <p className="mt-2 text-center text-wrap max-w-16">{step.description}</p>
+              <p className="mt-5 text-center text-wrap">{step.description}</p>
             </div>
             {index < steps.length - 1 && (
               <div className="w-16 border-t border-oakhill-green mx-4" />
