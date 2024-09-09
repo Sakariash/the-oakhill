@@ -12,8 +12,8 @@ const Process = ({ blok }) => {
   ];
 
   return (
-    <div {...storyblokEditable()} className="flex flex-col items-center mt-14 px-4">
-      <h2 className="text-6xl mt-14 font-montserrat">Hur fungerar det?</h2>
+    <div {...storyblokEditable()} className="flex flex-col items-center mt-14 px-4 font-montserrat">
+      <h2 className="text-6xl mt-14">Hur fungerar det?</h2>
       <div className="flex items-center mt-14">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
