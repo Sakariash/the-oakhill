@@ -8,7 +8,7 @@ return (
   <div className="grid grid-cols-4 md:grid-cols-8 gap-y-8">
     <div className="col-span-4 md:col-span-6">
       <h2 id="footer-heading" className="text-6xl lg:text-8xl mb-4 font-bold">Hey!</h2>
-        <a className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@oakhill.com">
+        <a className="pt-14 relative group" target="_blank" rel="noreferrer noopener" aria-label="Email" href="mailto:hello@theoakhill.se">
           <span className="text-xl md:text-2xl underline underline-offset-8">hello@theoakhill.se</span>
           <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
         </a>
