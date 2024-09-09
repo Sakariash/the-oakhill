@@ -18,10 +18,10 @@ const Process = ({ blok }) => {
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 border border-oakhill-green rounded-full flex items-center justify-center text-2xl text-gray-800">
+              <div className="max-w-12 h-20 border border-oakhill-green rounded-full flex items-center justify-center text-2xl text-gray-800">
                 {step.value}
               </div>
-              <p className="mt-2 text-center">{step.description}</p>
+              <p className="mt-2 text-center text-wrap">{step.description}</p>
             </div>
             {index < steps.length - 1 && (
               <div className="w-16 border-t border-oakhill-green mx-4" />
