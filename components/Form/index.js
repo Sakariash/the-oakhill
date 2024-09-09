@@ -208,7 +208,7 @@ const GenericForm = ({ blok }) => {
         </button>
       </form>
       {notification && (
-        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-green-200 text-green-800' : 'text-red-800'}`}>
+        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-green' : 'text-white'}`}>
           {notification.message}
         </div>
       )}

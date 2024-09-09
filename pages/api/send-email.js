@@ -2,9 +2,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, lastname, address, description, checklist } = req.body;
-    console.log('SMTP_HOST:', process.env.SMTP_HOST);
-    console.log('SMTP_USER:', process.env.SMTP_USER);
+    const { name, company, email, phonenumber, message } = req.body;
     // Nodemailer transporter configuration
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -22,10 +20,10 @@ export default async function handler(req, res) {
       subject: 'New Form Submission',
       text: `
         Name: ${name}
-        Lastname: ${lastname}
-        Address: ${address}
-        Description: ${description}
-        Checklist: ${checklist.join(', ')}
+        Company: ${company}
+        Email: ${email}
+        phonenumber: ${phonenumber}
+        message: ${message}
       `,
     };
 
