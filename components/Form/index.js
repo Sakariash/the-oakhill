@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
-
+console
 const GenericForm = ({ blok }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -64,7 +64,7 @@ const GenericForm = ({ blok }) => {
           setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
         }
       } catch (error) {
-        .error('Error sending email:', error);
+        console.error('Error sending email:', error);
         setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
       }
     }
