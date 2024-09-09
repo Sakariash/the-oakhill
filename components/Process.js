@@ -21,7 +21,7 @@ const Process = ({ blok }) => {
               <div className="w-20 h-20 border border-oakhill-green rounded-full flex items-center justify-center text-2xl text-gray-800">
                 {step.value}
               </div>
-              <p className="mt-2 text-center text-wrap max-w-12">{step.description}</p>
+              <p className="mt-2 text-center text-wrap max-w-16">{step.description}</p>
             </div>
             {index < steps.length - 1 && (
               <div className="w-16 border-t border-oakhill-green mx-4" />
