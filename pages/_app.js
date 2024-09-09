@@ -21,6 +21,7 @@ import Packages from "../components/Packages";
 import Statistic from "../components/Statistic";
 import TextContent from "../components/Text/TextContent";
 import HeroContent from "../components/Text/HeroContent"
+import Process from "../components/Process";
 
 const components = {
   feature: Feature,
@@ -42,7 +43,8 @@ const components = {
   packages: Packages,
   statistic: Statistic,
   textContent: TextContent,
-  heroContent: HeroContent
+  heroContent: HeroContent,
+  process: Process,
 };
 
 storyblokInit({
