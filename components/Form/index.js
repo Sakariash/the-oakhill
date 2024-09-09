@@ -64,7 +64,7 @@ const GenericForm = ({ blok }) => {
           setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
         }
       } catch (error) {
-        console.error('Error sending email:', error);
+        .error('Error sending email:', error);
         setNotification({ type: 'error', message: 'Ett fel uppstod, vänligen försök igen!' });
       }
     }
@@ -208,7 +208,7 @@ const GenericForm = ({ blok }) => {
         </button>
       </form>
       {notification && (
-        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-green' : 'text-white'}`}>
+        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-green text-white' : 'text-red-800'}`}>
           {notification.message}
         </div>
       )}
