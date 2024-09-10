@@ -12,19 +12,19 @@ const Process = ({ blok }) => {
   ];
 
   return (
-    <div {...storyblokEditable()} className="flex flex-col items-center mt-14 px-4 font-montserrat md:px-48">
+    <div {...storyblokEditable()} className="flex flex-col lg:items-center mt-14 px-4 font-montserrat lg:px-48">
       <h2 className="text-6xl mt-14">Hur fungerar det?</h2>
-      <div className="flex items-center mt-14">
+      <div className="flex flex-col lg:flex-row lg:items-center mt-14">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col items-center">
-              <div className="w-20 h-20 border border-oakhill-green rounded-full flex items-center justify-center text-2xl text-gray-800">
+            <div className="flex flex-row lg:flex-col lg:items-center lg:w-32 lg:h-48">
+              <div className="w-20 h-20 border mr-20 lg:mb-0 lg:mr-0 border-oakhill-green rounded-full flex items-center justify-center text-4xl text-gray-800">
                 {step.value}
               </div>
-              <p className="mt-5 text-center text-wrap">{step.description}</p>
+              <p className="mt-7 text-left lg:text-center">{step.description}</p>
             </div>
             {index < steps.length - 1 && (
-              <div className="w-16 border-t border-oakhill-green mx-4" />
+              <div className="w-16 ml-10 lg:ml-4 border-l lg:border-l-0 lg:h-0 h-16 lg:border-t border-oakhill-green mx-4 lg:mb-24  lg:visible" />
             )}
           </React.Fragment>
         ))}
