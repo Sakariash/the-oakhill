@@ -16,7 +16,6 @@ import TwoImages from "../components/TwoImage";
 import ThreeImages from "../components/ThreeImage";
 import GenericForm from "../components/Form";
 import Hero from "../components/Hero";
-// import ProtectedRoute from "../components/ProtectedRoute";
 import FAQ from "../components/FAQ";
 import Packages from "../components/Packages";
 import Statistic from "../components/Statistic";
@@ -79,12 +78,10 @@ function MyApp({ Component, pageProps }) {
       `,
     }}
   />
-    // <ProtectedRoute>
       <Layout story={pageProps.config}>
       {/* {isHomePage && <Hero blok={pageProps.story.content.hero} />} */}
       <Component key={key} {...props} />
       </Layout>
-    // </ProtectedRoute>
     </>
       );
 }
