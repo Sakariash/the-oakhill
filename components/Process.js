@@ -18,7 +18,7 @@ const Process = ({ blok }) => {
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div className="flex flex-row lg:flex-col lg:items-center lg:w-32 lg:h-48">
-              <div className="w-20 h-20 border mr-20 lg:mb-0 lg:mr-0 border-oakhill-green rounded-full flex items-center justify-center text-4xl text-gray-800">
+              <div className="min-w-20 h-20 mr-12 border lg:mb-0 lg:mr-0 border-oakhill-green rounded-full flex items-center justify-center text-4xl text-gray-800">
                 {step.value}
               </div>
               <p className="mt-7 text-left lg:text-center">{step.description}</p>
@@ -28,11 +28,6 @@ const Process = ({ blok }) => {
             )}
           </React.Fragment>
         ))}
-      {/* <div className="flex flex-col items-center">
-       <div className="text-4xl text-gray-800">
-            Klart
-        </div>
-       </div> */}
       </div>
     </div>
   );
