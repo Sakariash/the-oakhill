@@ -61,28 +61,10 @@ function MyApp({ Component, pageProps }) {
   const {key, ...props} = pageProps;
   
   return (
-    <>
-    <Script
-    async
-    src={`https://www.googletagmanager.com/gtag/js?id=G-E3WGSRDPY5`}
-  />
-  <Script
-    id="google-analytics"
-    dangerouslySetInnerHTML={{
-      __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-E3WGSRDPY5');
-      `,
-    }}
-  />
       <Layout story={pageProps.config}>
       {/* {isHomePage && <Hero blok={pageProps.story.content.hero} />} */}
       <Component key={key} {...props} />
       </Layout>
-    </>
       );
 }
 
