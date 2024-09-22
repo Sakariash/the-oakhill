@@ -11,12 +11,11 @@ const InformationText = ({ blok }) => {
         </h2>
         </div>
 )}{blok.information && (
-  <div className="col-start-4 col-end-12 row-start-6 row-end-12 md:col-start-6 lg:col-end-12 lg:row-start-5 lg:row-end-11 2xl:col-start-7 2xl:col-end-12 2xl:row-start-6 2xl:row-end-11 text-left">
+  <div className="col-start-4 col-end-12 row-start-6 row-end-12 md:col-start-6 lg:col-end-12 lg:row-start-6 lg:row-end-11 2xl:col-start-7 2xl:col-end-12 text-left">
         <p className="md:text-xl lg:text-2xl 2xl:text-3xl">
           {blok.information}
         </p>
-        
-        </div>
+  </div>
 )}
     </div>
   );
