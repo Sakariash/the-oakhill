@@ -28,9 +28,9 @@ const FAQ = ({ blok }) => {
               {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </span>
           </div>
-          <div className={`overflow-hidden text-left transition-all duration-300 ease-in-out md:w-2/3
-            ${activeIndex === index ? 'max-h-full py-4' : 'max-h-0 py-0'}`}>
-            <p className="text-lg whitespace-pre-wrap font-montserrat font-thin">{faq.answer}</p>
+          <div className={`overflow-hidden text-left transition-[max-height,padding] duration-300 ease-in-out md:w-2/3
+            ${activeIndex === index ? 'max-h-[1000px] py-4' : 'max-h-0 py-0'}`}>
+            <p className="text-smlg whitespace-pre-wrap font-montserrat font-light">{faq.answer}</p>
           </div>
         </div>
       ))}
