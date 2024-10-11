@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
 import Image from "next/image";
@@ -7,18 +7,26 @@ const Navigation = ({ story }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const closeMenu = () => setOpenMenu(false);
 
+  useEffect(() => {
+    if (openMenu) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [openMenu]);
+
   // Ensure that story is defined and has the necessary properties
   const headerLogo = story?.header_logo || {};
   const headerMenu = story?.header_menu || [];
 
   return (
     <div className="relative border-b border-gray-600 md:mx-10">
-      <div className=" mx-auto pr-4 sm:pr-6">
+      <div className="relative z-50 bg-white mx-auto pr-4 sm:pr-6">
         <div className="flex justify-between items-center py-1 md:justify-start ">
           <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-24"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
-                <div className="relative w-72 h-full">
+                <div className="relative w-80 h-full">
                   <Image
                     src={headerLogo.filename}
                     fill
@@ -32,28 +40,46 @@ const Navigation = ({ story }) => {
             )}
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <button
+          <button
               type="button"
-              onClick={() => setOpenMenu(true)}
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              aria-expanded="false"
+              onClick={() => setOpenMenu(!openMenu)} // Toggle open/close
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+              aria-expanded={openMenu}
             >
               <span className="sr-only">Open menu</span>
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {openMenu ? ( // Change icon based on menu state
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
           <HeaderMenu story={story && story.header_menu} />
@@ -62,50 +88,11 @@ const Navigation = ({ story }) => {
 
       {/* Mobile menu, show/hide based on mobile menu state */}
       <div
-        className={`fixed inset-0 bg-white z-50 p-6 flex flex-col transition-transform duration-500 ease-in-out ${
-          openMenu ? 'translate-y-0' : '-translate-y-full'
+        className={`fixed inset-0 bg-white z-10 p-6 flex flex-col transition-transform duration-500 ease-in-out ${
+          openMenu ? 'translate-y-[105px]' : '-translate-y-full'
         }`}
+        style={{ height: 'calc(100vh - 105px)' }} 
       >
-        <div className="flex justify-between items-center mb-6">
-        <div className="flex justify-start lg:w-0 lg:flex-1 cursor-auto relative w-40 h-9"> {/* Container for the logo */}
-            {headerLogo?.filename && (
-              <Link href="/" passHref>
-                <div className="relative w-48 h-full">
-                  <Image
-                    src={headerLogo.filename}
-                    fill
-                    sizes="(max-width: 150px)"
-                    style={{ objectFit: 'contain' }}
-                    alt={story.header_logo.alt || 'Logo'}
-                    className="absolute inset-0"
-                  />
-                </div>
-              </Link>
-            )}
-          </div>
-          <button
-            type="button"
-            onClick={() => setOpenMenu(false)}
-            className="text-gray-600 hover:text-gray-900"
-          >
-            <span className="sr-only">Close menu</span>
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
         <nav className="flex-grow flex flex-col space-y-2 mt-14">
           {/* Add a delay to the appearance of each item */}
           <Link href="/about" passHref>
