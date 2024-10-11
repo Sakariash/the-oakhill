@@ -6,7 +6,7 @@ const HeaderMenu = ({ blok, story }) => {
     }
     
     return (
-      <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10" {...storyblokEditable({ story })}>
+      <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0" {...storyblokEditable({ story })}>
         {story.map((nestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
