@@ -18,12 +18,12 @@ const Navigation = ({ story }) => {
           <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-24"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
-                <div className="relative w-48 h-full">
+                <div className="relative w-72 h-full">
                   <Image
                     src={headerLogo.filename}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'none' }}
+                    style={{ objectFit: 'contain' }}
                     alt={story.header_logo.alt || 'The Oakhill Logo'}
                     className="absolute inset-0"
                   />
@@ -144,7 +144,7 @@ const Navigation = ({ story }) => {
             </div>
           </div>
             <div className="text-sm col-span-2 place-content-end flex text-gray-500 mt-4">
-              <span>© 2024, The Oakhill</span>
+              <span>© 2024, The Oakhill Design & Solutions</span>
             </div>
         </footer>
       </div>
