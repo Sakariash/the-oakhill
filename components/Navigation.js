@@ -89,9 +89,9 @@ const Navigation = ({ story }) => {
       {/* Mobile menu, show/hide based on mobile menu state */}
       <div
         className={`fixed inset-0 bg-white z-10 p-6 flex flex-col transition-transform duration-500 ease-in-out ${
-          openMenu ? 'translate-y-[105px]' : '-translate-y-full'
+          openMenu ? 'translate-y-[75px]' : '-translate-y-full'
         }`}
-        style={{ height: 'calc(100vh - 105px)' }} 
+        style={{ height: 'calc(100vh - 75px)' }} 
       >
         <nav className="flex-grow flex flex-col space-y-2 mt-14">
           {/* Add a delay to the appearance of each item */}
