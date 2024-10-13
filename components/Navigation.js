@@ -23,10 +23,10 @@ const Navigation = ({ story }) => {
     <div className="relative border-b border-gray-600 md:mx-10">
       <div className="relative z-50 bg-white mx-auto pr-4 sm:pr-6">
         <div className="flex justify-between items-center py-1 md:justify-start ">
-          <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-24"> {/* Container for the logo */}
+          <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-12 sm:h-16 md:h-24"> {/* Container for the logo */}
             {headerLogo?.filename && (
               <Link href="/" passHref>
-                <div className="relative w-80 h-full">
+                <div className="relative w-32 sm:w-44 md:w-52 h-full">
                   <Image
                     src={headerLogo.filename}
                     fill
