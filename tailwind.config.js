@@ -9,6 +9,7 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         'oakhill-green': '#C3CABA',
+        'oakhill-black': '#191919',
       },
       keyframes: {
         fadeInOut: {
