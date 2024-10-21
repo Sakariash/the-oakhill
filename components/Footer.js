@@ -51,7 +51,6 @@ const Footer = () => {
           }}
         >
           <div className="w-full flex flex-col items-center justify-center text-center">
-  {/* "the oakhill" text */}
   <div className="flex items-center justify-center">
     <p className="text-6xl md:text-9xl font-extralight" style={{ fontFamily: 'Montserrat', fontWeight: 100 }}>
       the
@@ -60,8 +59,6 @@ const Footer = () => {
       oakhill
     </p>
   </div>
-
-  {/* "- design & solutions -" text */}
   <div className="flex items-center w-full justify-between mt-2">
     {/* Left dash */}
     <div
@@ -69,6 +66,7 @@ const Footer = () => {
         width: isMobile ? '48px' : '72px',
         height: '2px',
         backgroundColor: isLogoInFooter ? 'white' : 'black',
+        transition: 'all 0.7s ease-in-out',
       }}
     ></div>
 
@@ -90,6 +88,7 @@ const Footer = () => {
         width: isMobile ? '48px' : '72px',
         height: '2px',
         backgroundColor: isLogoInFooter ? 'white' : 'black',
+        transition: 'all 0.7s ease-in-out',
         
       }}
     ></div>
