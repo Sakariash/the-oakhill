@@ -95,17 +95,17 @@ const HeroContent = ({ blok }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-white to-50% z-10"></div>
       <div className="absolute inset-0 bg-white opacity-100 mix-blend-multiply backdrop-blur-sm" style={{ zIndex: 0 }}></div>
 
-      <div className="flex items-center justify-between h-full">
+      <div className="flex items-center justify-between h-full mx-8">
         <div className="grid grid-cols-12 grid-rows-12 w-full z-40">
           {blok.headline && (
-            <div className="col-start-2 col-end-12 row-start-1 row-end-5 text-left">
-              <h1 className="text-xl sm:text-4xl md:text-4xl lg:text-6xl 2xl:text-7xl">
+            <div className="col-start-1 col-end-12 row-start-1 row-end-6 text-left">
+              <h1 className="text-xl sm:text-4xl md:text-4xl lg:text-7xl">
                 {formatTextWithLineBreaks(blok.headline)}
               </h1>
             </div>
           )}
-          <div className="col-start-2 col-end-12 md:col-end-6 row-start-6 row-end-12 text-left">
-            <div className="max-w-md mx-auto">
+          <div className="col-start-1 col-end-12 md:col-end-6 row-start-7 row-end-12 text-left">
+            <div className="max-w-md">
               {submitted ? (
                 <p className="text-left">Vi har registrerat din e-mail och kommer inom en snar framtid att höra av oss till dig via mail!</p>
               ) : (
