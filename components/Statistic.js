@@ -51,7 +51,7 @@ const StatisticItem = ({ number, description, badge }) => {
   return (
     <div className='flex flex-row md:flex-col md:w-1/3 py-5 text-left'>
       <p className="hidden md:block">{badge}</p>
-      <h3 className="text-4xl md:text-8xl mr-5 border-r-2 border-oakhill-black md:border-none">{count}% </h3>
+      <h3 className="text-4xl md:text-8xl mr-5 pr-5 border-r-2 border-oakhill-black md:border-none">{count}%</h3>
       <p className="text-sm md:text-base mt-2">{description}</p>
     </div>
   );
