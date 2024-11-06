@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
+import { FiArrowUpRight } from 'react-icons/fi';
 console
 const GenericForm = ({ blok }) => {
   const [formData, setFormData] = useState({
@@ -90,8 +91,8 @@ const GenericForm = ({ blok }) => {
 
   return (
     <div {...storyblokEditable(blok)} className="relative max-w-4xl mx-3 mt-28 md:mx-auto font-montserrat text-left p-6  rounded-lg ">
-      <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-green "></div>
-      <h2 className="font-montserrat mb-6 text-2xl text-left text-gray-800 border-l-4 border-oakhill-green pl-4">
+      <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-black "></div>
+      <h2 className="font-montserrat mb-6 text-2xl text-left text-gray-800 border-l-4 border-oakhill-black pl-4">
         {blok.title || 'Kontakta oss'}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -112,7 +113,7 @@ const GenericForm = ({ blok }) => {
                 onChange={handleChange}
                 onFocus={() => handleFocus('name')}
                 onBlur={handleBlur}
-                className={`w-full px-2 py-2 border-b-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
+                className={`w-full px-2 py-2 border-b-2 ${errors.name ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
               />
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
@@ -133,7 +134,7 @@ const GenericForm = ({ blok }) => {
                 onChange={handleChange}
                 onFocus={() => handleFocus('company')}
                 onBlur={handleBlur}
-                className={`w-full px-2 py-2 border-b-2 ${errors.company ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
+                className={`w-full px-2 py-2 border-b-2 ${errors.company ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
               />
               {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company}</p>}
             </div>
@@ -155,7 +156,7 @@ const GenericForm = ({ blok }) => {
               onChange={handleChange}
               onFocus={() => handleFocus('email')}
               onBlur={handleBlur}
-              className={`w-full px-2 py-2 border-b-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
+              className={`w-full px-2 py-2 border-b-2 ${errors.email ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
             />
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
           </div>
@@ -176,7 +177,7 @@ const GenericForm = ({ blok }) => {
               onChange={handleChange}
               onFocus={() => handleFocus('phonenumber')}
               onBlur={handleBlur}
-              className={`w-full px-2 py-2 border-b-2 ${errors.phonenumber ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
+              className={`w-full px-2 py-2 border-b-2 ${errors.phonenumber ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
             />
             {errors.phonenumber && <p className="text-red-500 text-sm mt-1">{errors.phonenumber}</p>}
           </div>
@@ -196,19 +197,25 @@ const GenericForm = ({ blok }) => {
               onChange={handleChange}
               onFocus={() => handleFocus('message')}
               onBlur={handleBlur}
-              className={`w-full px-2 border-b-2 ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none resize-none`}
+              className={`w-full px-2 border-b-2 ${errors.message ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none resize-none`}
               rows="1"
               style={{ paddingTop: '1.5rem' }} 
             ></textarea>
             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
           </div>
         )}
-        <button type="submit" className="w-full bg-oakhill-green text-white py-2 rounded-lg hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          Skicka
-        </button>
+        <button
+      type="submit"
+      className="relative w-full py-2 bg-oakhill-black text-white rounded transition duration-200 flex items-center justify-center group"
+    >
+      Skicka
+      <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
+        <FiArrowUpRight className="transform transition-transform duration-300 ease-in-out" />
+      </span>
+    </button>
       </form>
       {notification && (
-        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-green text-white' : 'text-red-800'}`}>
+        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-black text-white' : 'text-red-800'}`}>
           {notification.message}
         </div>
       )}
