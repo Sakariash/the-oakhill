@@ -1,46 +1,57 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useIsMobile from './hooks/useIsMobile';
 
 const Footer = () => {
-  const [isLogoInFooter, setIsLogoInFooter] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false); // To track if the animation has already been triggered
   const isMobile = useIsMobile();
+  
+  const logoRef = useRef(null);  // Ref for the logo element
+  const footerRef = useRef(null);  // Ref for the footer element
 
   useEffect(() => {
     const handleScroll = () => {
-      const footer = document.getElementById('footer');
-      const logo = document.getElementById('scroll-logo');
-      const footerRect = footer.getBoundingClientRect();
-      
-      // Detect if the user has scrolled halfway to the footer
-      if (footerRect.top <= window.innerHeight / 2) {
-        setIsLogoInFooter(true);
-      } else {
-        setIsLogoInFooter(false);
+      const footer = footerRef.current;
+      const logo = logoRef.current;
+
+      // Check if the footer is in the viewport
+      if (footer && logo) {
+        const footerRect = footer.getBoundingClientRect();
+        
+        // Trigger animation when the footer is halfway visible in the viewport
+        if (footerRect.top <= window.innerHeight / 2 && !hasAnimated) {
+          setHasAnimated(true);  // Set animation as triggered
+        }
       }
     };
 
+    // Attach scroll event listener
     window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <>
       {/* Footer */}
       <footer
+        ref={footerRef}
         id="footer"
-        className="font-montserrat border-t border-gray-600 mt-80 p-8 md:px-48 bg-oakhill-black text-white"
+        className={`font-montserrat border-t border-gray-600 p-8 md:px-48 bg-oakhill-black text-white ${
+          hasAnimated ? 'mt-28' : 'mt-80'
+        } transition-all duration-700 ease-in-out`}
         aria-labelledby="footer-heading"
         style={{ position: 'relative' }}
       >
         {/* The logo starts above the footer, but moves into the footer when scrolled */}
         <div
-          id="scroll-logo"
+          ref={logoRef}
           className={`transition-all duration-700 ease-in-out ${
-            isLogoInFooter ? 'text-white translate-y-0' : 'text-oakhill-black -translate-y-24'
+            hasAnimated ? 'text-white translate-y-0' : 'text-oakhill-black -translate-y-24'
           }`}
           style={{
             position: 'absolute',
-            top: isLogoInFooter ? '24px' : '-50%', // Pushes logo above footer before scrolling
+            top: hasAnimated ? '24px' : '-50%', // Position the logo outside initially
             left: '50%',
             transform: 'translateX(-50%)',
             fontSize: '3rem',
@@ -51,55 +62,54 @@ const Footer = () => {
           }}
         >
           <div className="w-full flex flex-col items-center justify-center text-center">
-  <div className="flex items-center justify-center">
-    <p className="text-6xl md:text-9xl font-extralight" style={{ fontFamily: 'Montserrat', fontWeight: 100 }}>
-      the
-    </p>
-    <p className="text-6xl md:text-9xl font-medium" style={{ marginLeft: isMobile ? '12px' : '24px', fontFamily: 'Montserrat', fontWeight: 500 }}>
-      oakhill
-    </p>
-  </div>
-  <div className="flex items-center w-full justify-between mt-2">
-    {/* Left dash */}
-    <div
-      style={{
-        width: isMobile ? '48px' : '72px',
-        height: '2px',
-        backgroundColor: isLogoInFooter ? 'white' : '#191919',
-        transition: 'all 0.7s ease-in-out',
-      }}
-    ></div>
+            <div className="flex items-center justify-center">
+              <p className="text-6xl md:text-9xl font-extralight" style={{ fontFamily: 'Montserrat', fontWeight: 100 }}>
+                the
+              </p>
+              <p className="text-6xl md:text-9xl font-medium" style={{ marginLeft: isMobile ? '12px' : '24px', fontFamily: 'Montserrat', fontWeight: 500 }}>
+                oakhill
+              </p>
+            </div>
+            <div className="flex items-center w-full justify-between mt-2">
+              {/* Left dash */}
+              <div
+                style={{
+                  width: isMobile ? '48px' : '72px',
+                  height: '2px',
+                  backgroundColor: hasAnimated ? 'white' : '#191919',
+                  transition: 'all 0.7s ease-in-out',
+                }}
+              ></div>
 
-    {/* Design & Solutions text */}
-    <span
-      className=" text-sm"
-      style={{
-        fontFamily: 'Montserrat',
-        fontWeight: 300,
-        letterSpacing: isMobile ? '3px' : '12px',
-      }}
-    >
-      design & solutions
-    </span>
+              {/* Design & Solutions text */}
+              <span
+                className=" text-sm"
+                style={{
+                  fontFamily: 'Montserrat',
+                  fontWeight: 300,
+                  letterSpacing: isMobile ? '3px' : '12px',
+                }}
+              >
+                design & solutions
+              </span>
 
-    {/* Right dash */}
-    <div
-      style={{
-        width: isMobile ? '48px' : '72px',
-        height: '2px',
-        backgroundColor: isLogoInFooter ? 'white' : '#191919',
-        transition: 'all 0.7s ease-in-out',
-        
-      }}
-    ></div>
-  </div>
-</div>
+              {/* Right dash */}
+              <div
+                style={{
+                  width: isMobile ? '48px' : '72px',
+                  height: '2px',
+                  backgroundColor: hasAnimated ? 'white' : '#191919',
+                  transition: 'all 0.7s ease-in-out',
+                }}
+              ></div>
+            </div>
+          </div>
         </div>
 
         {/* Footer content that will be pushed down when the logo moves into the footer */}
         <div
           className={`grid grid-cols-4 md:grid-cols-8 gap-y-8 transition-all duration-700 ease-in-out ${
-            isLogoInFooter ? 'mt-52' : 'mt-0'
+            hasAnimated ? 'mt-52' : 'mt-0'
           }`}
         >
           <div className="col-span-4 md:col-span-6">
@@ -178,8 +188,9 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="col-span-full md:col-span-3 flex md:text-lg text-gray-500 md:mt-4">
-            <span className="">© 2024, The Oakhill Design & Solutions</span>
+          <div className="col-span-full md:col-span-3 flex md:text-lg text-gray-500 md:mt-10 mt-16">
+            <span>© 2024 The Oakhill</span>
+            <span className="ml-8">All rights reserved.</span>
           </div>
         </div>
       </footer>
@@ -188,4 +199,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
