@@ -3,8 +3,6 @@ import { storyblokEditable } from '@storyblok/react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 const GenericForm = ({ blok, packageType }) => {
-
-  console.log('FORM DATA::>', blok.image.filename);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -92,7 +90,7 @@ const GenericForm = ({ blok, packageType }) => {
   return (
     <div {...storyblokEditable(blok)} className="flex flex-col md:flex-row mx-auto mt-20 font-montserrat">
       {/* Image section for desktop */}
-      <div className="md:block w-1/2  " style={{
+      <div className="hidden md:block w-1/2  " style={{
         backgroundImage: `url(${blok.image.filename})`,
         backgroundSize: 'cover',
         backgroundPosition: 'left',
@@ -101,10 +99,10 @@ const GenericForm = ({ blok, packageType }) => {
  
       
       {/* Form section */}
-      <div className="w-1/2 p-6 md:px-16">
+      <div className="w-full md:w-1/2 p-6 md:px-16">
         
-          <h2 className="text-4xl text-oakhill-black mb-6 text-left">{blok.headline}</h2>
-          <p className="mb-8 text-gray-600 text-left">{blok.paragraph}</p> 
+          <h2 className="text-2xl md:text-4xl text-oakhill-black mb-6 text-left">{blok.headline}</h2>
+          <p className="mb-8 text-gray-600 text-left text-sm md:text-md">{blok.paragraph}</p> 
           <form onSubmit={handleSubmit} className="space-y-6">
               {blok.name && (
                 <div className="relative mb-4">
