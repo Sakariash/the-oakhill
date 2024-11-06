@@ -93,7 +93,7 @@ const GenericForm = ({ blok, packageType }) => {
       <div className="hidden md:block w-1/2  " style={{
         backgroundImage: `url(${blok.image.filename})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'left',
+        backgroundPosition: 'center',
         height: 'calc(100vh - 80px)',
       }}></div>
  
