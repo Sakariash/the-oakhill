@@ -35,7 +35,7 @@ const Navigation = ({ story }) => {
     <div className="relative md:mx-10">
       <div className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white text-black' : 'bg-transparent text-white'}`}>
         <div className="flex justify-between items-center md:justify-start px-4">
-          <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-12 sm:h-16 md:h-20"> 
+          <div className="flex lg:w-0 lg:flex-1 cursor-auto relative h-20 sm:h-16 md:h-20"> 
             {headerLogo?.filename && (
               <Link href="/" passHref>
                 <div className="relative w-32 sm:w-44 md:w-52 h-20">
@@ -55,7 +55,7 @@ const Navigation = ({ story }) => {
             <button
               type="button"
               onClick={() => setOpenMenu(!openMenu)}
-              className="bg-white rounded-md p-2 mt-4 inline-flex items-center justify-center text-black hover:text-white hover:bg-oakhill-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-white hover:bg-oakhill-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
               aria-expanded={openMenu}
             >
               <span className="sr-only">Open menu</span>
@@ -77,7 +77,7 @@ const Navigation = ({ story }) => {
       {/* Mobile menu, show/hide based on mobile menu state */}
       <div
         className={`fixed inset-0 bg-white z-10 p-6 flex flex-col transition-transform duration-500 ease-in-out ${openMenu ? 'translate-y-0' : '-translate-y-full'}`}
-        style={{ height: 'calc(100vh - 75px)' }} 
+        style={{ height: '100vh' }} 
       >
         <nav className="flex-grow flex flex-col space-y-2 mt-14">
           <Link href="/about" passHref>
