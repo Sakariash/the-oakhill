@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const MenuLink = ({ blok }) => {
-  const isContactLink = blok.name === "Kontakta oss";
+  const isContactLink = blok.name === "Kontakt";
 
   return (
     <Link
