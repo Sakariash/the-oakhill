@@ -46,7 +46,7 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-black mr-3" />
-                <Tooltip text="This is the headline tooltip">Domän & Hosting</Tooltip>
+                {/* <Tooltip text="This is the headline tooltip">Domän & Hosting</Tooltip> */}
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-black mr-3" />
