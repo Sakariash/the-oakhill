@@ -104,7 +104,7 @@ const HeroContent = ({ blok }) => {
               </h1>
             </div>
           )}
-          <div className="col-start-1 col-end-12 md:col-end-6 row-start-5 row-end-12 md:row-start-6 text-left animate-slideDown">
+          <div className="col-start-1 col-end-12 md:col-end-6 row-start-5 row-end-12 md:row-start-6 text-left animate-slideInLeft">
             <div className="max-w-md">
               {submitted ? (
                 <p className="text-left">Vi har registrerat din e-mail och kommer inom en snar framtid att höra av oss till dig via mail!</p>
