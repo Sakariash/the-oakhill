@@ -55,7 +55,7 @@ const Navigation = ({ story }) => {
             <button
               type="button"
               onClick={() => setOpenMenu(!openMenu)}
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-white hover:bg-oakhill-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+              className="bg-white rounded-md p-2 mt-4 inline-flex items-center justify-center text-black hover:text-white hover:bg-oakhill-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
               aria-expanded={openMenu}
             >
               <span className="sr-only">Open menu</span>
