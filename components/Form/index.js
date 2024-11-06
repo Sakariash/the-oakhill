@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import { FiArrowUpRight } from 'react-icons/fi';
-console
-const GenericForm = ({ blok }) => {
+
+const GenericForm = ({ blok, packageType }) => {
+
+  console.log('FORM DATA::>', blok.image.filename);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -82,143 +84,125 @@ const GenericForm = ({ blok }) => {
   const getLabelClasses = (field) => {
     const isFocused = focusedField === field;
     const isFilled = formData[field] !== '';
-    return `absolute left-1 text-gray-700 font-medium transition-transform duration-500 ease-in-out ${
-      isFilled || isFocused
-        ? 'transform -translate-y-3 scale-75 top-0'
-        : 'top-4'
+    return `absolute left-1 text-gray-700 font-medium leading-3 transition-transform duration-500 ease-in-out ${
+      isFilled || isFocused ? 'transform -translate-y-3 scale-75 top-0' : 'top-4'
     }`;
   };
 
   return (
-    <div {...storyblokEditable(blok)} className="relative max-w-4xl mx-3 mt-28 md:mx-auto font-montserrat text-left p-6  rounded-lg ">
-      <div className="absolute top-0 left-0 w-full h-2 bg-oakhill-black "></div>
-      <h2 className="font-montserrat mb-6 text-2xl text-left text-gray-800 border-l-4 border-oakhill-black pl-4">
-        {blok.title || 'Kontakta oss'}
-      </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="flex space-x-4">
-          {blok.name && (
-            <div className="relative w-1/2">
-              <label
-                htmlFor="name"
-                className={getLabelClasses('name')}
-              >
-                Namn
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                onFocus={() => handleFocus('name')}
-                onBlur={handleBlur}
-                className={`w-full px-2 py-2 border-b-2 ${errors.name ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
-              />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-            </div>
-          )}
-          {blok.company !== undefined && (
-            <div className="relative w-1/2">
-              <label
-                htmlFor="company"
-                className={getLabelClasses('company')}
-              >
-              Företag
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                onFocus={() => handleFocus('company')}
-                onBlur={handleBlur}
-                className={`w-full px-2 py-2 border-b-2 ${errors.company ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
-              />
-              {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company}</p>}
+    <div {...storyblokEditable(blok)} className="flex flex-col md:flex-row mx-auto mt-20 font-montserrat">
+      {/* Image section for desktop */}
+      <div className="md:block w-1/2  " style={{
+        backgroundImage: `url(${blok.image.filename})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'left',
+        height: 'calc(100vh - 80px)',
+      }}></div>
+ 
+      
+      {/* Form section */}
+      <div className="w-1/2 p-6 md:px-16">
+        
+          <h2 className="text-4xl text-oakhill-black mb-6 text-left">{blok.headline}</h2>
+          <p className="mb-8 text-gray-600 text-left">{blok.paragraph}</p> 
+          <form onSubmit={handleSubmit} className="space-y-6">
+              {blok.name && (
+                <div className="relative mb-4">
+                  <label htmlFor="name" className={getLabelClasses('name')}>Namn</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    onFocus={() => handleFocus('name')}
+                    onBlur={handleBlur}
+                    className={`w-full px-2 py-2 border rounded-md ${errors.name && 'border-red-500'} focus:outline-none`}
+                  />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                </div>
+              )}
+              {blok.company !== undefined && (
+                <div className="relative mb-4">
+                  <label htmlFor="company" className={getLabelClasses('company')}>Företag</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    onFocus={() => handleFocus('company')}
+                    onBlur={handleBlur}
+                    className={`w-full px-2 py-2 border rounded-md  ${errors.company && 'border-red-500'} focus:outline-none`}
+                  />
+                  {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company}</p>}
+                </div>
+              )}
+            
+            {blok.email !== undefined && (
+              <div className="relative mb-4">
+                <label htmlFor="email" className={getLabelClasses('email')}>Email</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onFocus={() => handleFocus('email')}
+                  onBlur={handleBlur}
+                  className={`w-full px-2 py-2 border rounded-md ${errors.email && 'border-red-500'} focus:outline-none`}
+                />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              </div>
+            )}
+            {blok.phonenumber !== undefined && (
+              <div className="relative mb-4">
+                <label htmlFor="phonenumber" className={getLabelClasses('phonenumber')}>Telefon</label>
+                <input
+                  type="text"
+                  id="phonenumber"
+                  name="phonenumber"
+                  value={formData.phonenumber}
+                  onChange={handleChange}
+                  onFocus={() => handleFocus('phonenumber')}
+                  onBlur={handleBlur}
+                  className={`w-full px-2 py-2 border rounded-md ${errors.phonenumber && 'border-red-500'} focus:outline-none`}
+                />
+                {errors.phonenumber && <p className="text-red-500 text-sm mt-1">{errors.phonenumber}</p>}
+              </div>
+            )}
+            {blok.message !== undefined && (
+              <div className="relative mb-4">
+                <label htmlFor="message" className={getLabelClasses('message')}>Beskrivning</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  onFocus={() => handleFocus('message')}
+                  onBlur={handleBlur}
+                  className={`w-full px-2 py-2 border rounded-md ${errors.message && 'border-red-500'} focus:outline-none resize-none`}
+                  rows="4"
+                ></textarea>
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+              </div>
+            )}
+            <button
+              type="submit"
+              className="relative w-full py-2 bg-oakhill-black text-white rounded transition duration-200 flex items-center justify-center group"
+            >
+              Skicka
+              <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
+                <FiArrowUpRight className="transform transition-transform duration-300 ease-in-out" />
+              </span>
+            </button>
+          </form>
+          {notification && (
+            <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-black text-white' : 'text-red-800'}`}>
+              {notification.message}
             </div>
           )}
         </div>
-        {blok.email !== undefined && (
-          <div className="relative mb-4">
-            <label
-              htmlFor="email"
-              className={getLabelClasses('email')}
-            >
-            Email
-            </label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              onFocus={() => handleFocus('email')}
-              onBlur={handleBlur}
-              className={`w-full px-2 py-2 border-b-2 ${errors.email ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
-            />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-          </div>
-        )}
-        {blok.phonenumber !== undefined && (
-          <div className="relative mb-4">
-            <label
-              htmlFor="phonenumber"
-              className={getLabelClasses('phonenumber')}
-            >
-              Telefon
-            </label>
-            <input
-              type="text"
-              id="phonenumber"
-              name="phonenumber"
-              value={formData.phonenumber}
-              onChange={handleChange}
-              onFocus={() => handleFocus('phonenumber')}
-              onBlur={handleBlur}
-              className={`w-full px-2 py-2 border-b-2 ${errors.phonenumber ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none`}
-            />
-            {errors.phonenumber && <p className="text-red-500 text-sm mt-1">{errors.phonenumber}</p>}
-          </div>
-        )}
-        {blok.message !== undefined && (
-          <div className="relative mb-4">
-            <label
-              htmlFor="message"
-              className={getLabelClasses('message')}
-            >
-              Beskrivning
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              onFocus={() => handleFocus('message')}
-              onBlur={handleBlur}
-              className={`w-full px-2 border-b-2 ${errors.message ? 'border-red-500' : 'border-oakhill-black'} focus:outline-none resize-none`}
-              rows="1"
-              style={{ paddingTop: '1.5rem' }} 
-            ></textarea>
-            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
-          </div>
-        )}
-        <button
-      type="submit"
-      className="relative w-full py-2 bg-oakhill-black text-white rounded transition duration-200 flex items-center justify-center group"
-    >
-      Skicka
-      <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
-        <FiArrowUpRight className="transform transition-transform duration-300 ease-in-out" />
-      </span>
-    </button>
-      </form>
-      {notification && (
-        <div className={`mt-4 p-4 rounded-lg ${notification.type === 'success' ? 'bg-oakhill-black text-white' : 'text-red-800'}`}>
-          {notification.message}
-        </div>
-      )}
     </div>
   );
 };
