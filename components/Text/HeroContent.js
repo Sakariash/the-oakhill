@@ -93,7 +93,7 @@ const HeroContent = ({ blok }) => {
         zIndex: -1,
       }}></div>
       <div className="absolute inset-0 bg-gradient-to-t from-white to-50% z-10"></div>
-      <div className="absolute inset-0 bg-white opacity-100 mix-blend-multiply backdrop-blur-sm" style={{ zIndex: 0 }}></div>
+      <div className="absolute inset-0 bg-white opacity-100 mix-blend-multiply " style={{ zIndex: 0 }}></div>
 
       <div className="flex justify-between h-full mx-4">
         <div className="grid grid-cols-12 grid-rows-12 w-full z-40 mt-8">
