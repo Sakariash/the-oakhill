@@ -99,7 +99,7 @@ const HeroContent = ({ blok }) => {
         <div className="grid grid-cols-12 grid-rows-12 w-full z-40">
           {blok.headline && (
             <div className="col-start-1 col-end-12 row-start-1 row-end-6 text-left">
-              <h1 className="text-xl sm:text-4xl md:text-4xl lg:text-7xl">
+              <h1 className="text-xl sm:text-4xl md:text-4xl lg:text-7xl animate-slideDown">
                 {formatTextWithLineBreaks(blok.headline)}
               </h1>
             </div>

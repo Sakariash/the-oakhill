@@ -36,7 +36,7 @@ const Footer = () => {
         <div
           id="scroll-logo"
           className={`transition-all duration-700 ease-in-out ${
-            isLogoInFooter ? 'text-white translate-y-0' : 'text-black -translate-y-24'
+            isLogoInFooter ? 'text-white translate-y-0' : 'text-oakhill-black -translate-y-24'
           }`}
           style={{
             position: 'absolute',
@@ -65,7 +65,7 @@ const Footer = () => {
       style={{
         width: isMobile ? '48px' : '72px',
         height: '2px',
-        backgroundColor: isLogoInFooter ? 'white' : 'black',
+        backgroundColor: isLogoInFooter ? 'white' : '#191919',
         transition: 'all 0.7s ease-in-out',
       }}
     ></div>
@@ -87,7 +87,7 @@ const Footer = () => {
       style={{
         width: isMobile ? '48px' : '72px',
         height: '2px',
-        backgroundColor: isLogoInFooter ? 'white' : 'black',
+        backgroundColor: isLogoInFooter ? 'white' : '#191919',
         transition: 'all 0.7s ease-in-out',
         
       }}
