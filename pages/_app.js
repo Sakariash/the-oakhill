@@ -22,6 +22,7 @@ import Statistic from "../components/Statistic";
 import TextContent from "../components/Text/TextContent";
 import HeroContent from "../components/Text/HeroContent"
 import Process from "../components/Process";
+import StatisticItem from '../components/StatisticItem';
 
 const components = {
   feature: Feature,
@@ -45,6 +46,7 @@ const components = {
   textContent: TextContent,
   heroContent: HeroContent,
   process: Process,
+  statisticItem: StatisticItem
 };
 
 storyblokInit({
@@ -62,7 +64,6 @@ function MyApp({ Component, pageProps }) {
   
   return (
       <Layout story={pageProps.config}>
-      {/* {isHomePage && <Hero blok={pageProps.story.content.hero} />} */}
       <Component key={key} {...props} />
       </Layout>
       );
