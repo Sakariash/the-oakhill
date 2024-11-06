@@ -1,7 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import { useRouter } from 'next/router';
 import { FaCheck } from 'react-icons/fa';
-import Tooltip from './Tooltip';
 
 const Packages = ({ blok }) => {
     const router = useRouter();
@@ -46,7 +45,6 @@ const Packages = ({ blok }) => {
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-black mr-3" />
-                {/* <Tooltip text="This is the headline tooltip">Domän & Hosting</Tooltip> */}
               </li>
               <li className="flex items-center text-gray-700">
                 <FaCheck className="text-oakhill-black mr-3" />
