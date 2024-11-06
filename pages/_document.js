@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Webbyrå The Oakhill - Hemsidor till bra pris</title>
+        <title>Webbyrå The Oakhill | Din digitala partner</title>
         <link rel="icon" href="/Favicon.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap" rel="stylesheet"/>
