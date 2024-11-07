@@ -1,12 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
-import useIsMobile from './hooks/useIsMobile';
+import { useEffect, useState, useRef } from "react";
+import useIsMobile from "./hooks/useIsMobile";
 
 const Footer = () => {
   const [hasAnimated, setHasAnimated] = useState(false); // To track if the animation has already been triggered
   const isMobile = useIsMobile();
-  
-  const logoRef = useRef(null);  // Ref for the logo element
-  const footerRef = useRef(null);  // Ref for the footer element
+
+  const logoRef = useRef(null); // Ref for the logo element
+  const footerRef = useRef(null); // Ref for the footer element
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,19 +16,19 @@ const Footer = () => {
       // Check if the footer is in the viewport
       if (footer && logo) {
         const footerRect = footer.getBoundingClientRect();
-        
+
         // Trigger animation when the footer is halfway visible in the viewport
         if (footerRect.top <= window.innerHeight / 2 && !hasAnimated) {
-          setHasAnimated(true);  // Set animation as triggered
+          setHasAnimated(true); // Set animation as triggered
         }
       }
     };
 
     // Attach scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Clean up the event listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [hasAnimated]);
 
   return (
@@ -38,35 +38,47 @@ const Footer = () => {
         ref={footerRef}
         id="footer"
         className={`font-montserrat border-t border-gray-600 p-8 md:px-48 bg-oakhill-black text-white ${
-          hasAnimated ? 'mt-28' : 'mt-80'
+          hasAnimated ? "mt-28" : "mt-80"
         } transition-all duration-700 ease-in-out`}
         aria-labelledby="footer-heading"
-        style={{ position: 'relative' }}
+        style={{ position: "relative" }}
       >
         {/* The logo starts above the footer, but moves into the footer when scrolled */}
         <div
           ref={logoRef}
           className={`transition-all duration-700 ease-in-out ${
-            hasAnimated ? 'text-white translate-y-0' : 'text-oakhill-black -translate-y-24'
+            hasAnimated
+              ? "text-white translate-y-0"
+              : "text-oakhill-black -translate-y-24"
           }`}
           style={{
-            position: 'absolute',
-            top: hasAnimated ? '24px' : '-50%', // Position the logo outside initially
-            left: '50%',
-            transform: 'translateX(-50%)',
-            fontSize: '3rem',
-            fontWeight: 'bold',
-            textAlign: 'center',
+            position: "absolute",
+            top: hasAnimated ? "24px" : "-50%", // Position the logo outside initially
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: "3rem",
+            fontWeight: "bold",
+            textAlign: "center",
             zIndex: 10,
-            transition: 'all 0.7s ease-in-out',
+            transition: "all 0.7s ease-in-out",
           }}
         >
           <div className="w-full flex flex-col items-center justify-center text-center">
             <div className="flex items-center justify-center">
-              <p className="text-6xl md:text-9xl font-extralight" style={{ fontFamily: 'Montserrat', fontWeight: 100 }}>
+              <p
+                className="text-6xl md:text-9xl font-extralight"
+                style={{ fontFamily: "Montserrat", fontWeight: 100 }}
+              >
                 the
               </p>
-              <p className="text-6xl md:text-9xl font-medium" style={{ marginLeft: isMobile ? '12px' : '24px', fontFamily: 'Montserrat', fontWeight: 500 }}>
+              <p
+                className="text-6xl md:text-9xl font-medium"
+                style={{
+                  marginLeft: isMobile ? "12px" : "24px",
+                  fontFamily: "Montserrat",
+                  fontWeight: 500,
+                }}
+              >
                 oakhill
               </p>
             </div>
@@ -74,10 +86,10 @@ const Footer = () => {
               {/* Left dash */}
               <div
                 style={{
-                  width: isMobile ? '48px' : '72px',
-                  height: '2px',
-                  backgroundColor: hasAnimated ? 'white' : '#191919',
-                  transition: 'all 0.7s ease-in-out',
+                  width: isMobile ? "48px" : "72px",
+                  height: "2px",
+                  backgroundColor: hasAnimated ? "white" : "#191919",
+                  transition: "all 0.7s ease-in-out",
                 }}
               ></div>
 
@@ -85,9 +97,9 @@ const Footer = () => {
               <span
                 className=" text-sm"
                 style={{
-                  fontFamily: 'Montserrat',
+                  fontFamily: "Montserrat",
                   fontWeight: 300,
-                  letterSpacing: isMobile ? '3px' : '12px',
+                  letterSpacing: isMobile ? "3px" : "12px",
                 }}
               >
                 design & solutions
@@ -96,10 +108,10 @@ const Footer = () => {
               {/* Right dash */}
               <div
                 style={{
-                  width: isMobile ? '48px' : '72px',
-                  height: '2px',
-                  backgroundColor: hasAnimated ? 'white' : '#191919',
-                  transition: 'all 0.7s ease-in-out',
+                  width: isMobile ? "48px" : "72px",
+                  height: "2px",
+                  backgroundColor: hasAnimated ? "white" : "#191919",
+                  transition: "all 0.7s ease-in-out",
                 }}
               ></div>
             </div>
@@ -109,11 +121,16 @@ const Footer = () => {
         {/* Footer content that will be pushed down when the logo moves into the footer */}
         <div
           className={`grid grid-cols-4 md:grid-cols-8 gap-y-8 transition-all duration-700 ease-in-out ${
-            hasAnimated ? 'mt-52' : 'mt-0'
+            hasAnimated ? "mt-52" : "mt-0"
           }`}
         >
           <div className="col-span-4 md:col-span-6">
-            <h2 id="footer-heading" className="text-6xl lg:text-8xl mb-4 font-bold">Hey!</h2>
+            <h2
+              id="footer-heading"
+              className="text-6xl lg:text-8xl mb-4 font-bold"
+            >
+              Hey!
+            </h2>
             <a
               className="pt-14 relative group"
               target="_blank"
@@ -132,13 +149,19 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-2 mt-8 md:mt-0 flex flex-wrap justify-between">
             <ul role="list" className="w-1/2 space-y-4">
               <li>
-                <a href="#" className="text-sm md:text-lg relative group hover:text-slate-200">
+                <a
+                  href="/404"
+                  className="text-sm md:text-lg relative group hover:text-slate-200"
+                >
                   Projekt
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-sm md:text-lg relative group hover:text-slate-200">
+                <a
+                  href="/about"
+                  className="text-sm md:text-lg relative group hover:text-slate-200"
+                >
                   Om oss
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
                 </a>
@@ -146,14 +169,20 @@ const Footer = () => {
             </ul>
             <ul role="list" className="w-1/2 space-y-4">
               <li>
-                <a href="/contact" className="text-sm md:text-lg relative group hover:text-slate-200">
+                <a
+                  href="/contact"
+                  className="text-sm md:text-lg relative group hover:text-slate-200"
+                >
                   Kontakt
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm md:text-lg relative group hover:text-slate-200">
-                  Prisplan
+                <a
+                  href="/services"
+                  className="text-sm md:text-lg relative group hover:text-slate-200"
+                >
+                  Tjänster
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
                 </a>
               </li>
@@ -177,11 +206,17 @@ const Footer = () => {
 
           {/* Policy links */}
           <div className="col-span-full md:col-span-5 flex space-x-8 md:mt-4">
-            <a href="/privacy" className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200">
+            <a
+              href="/privacy"
+              className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200"
+            >
               Integritetspolicy
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
             </a>
-            <a href="#" className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200">
+            <a
+              href="#"
+              className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200"
+            >
               Användarvillkor
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
             </a>
