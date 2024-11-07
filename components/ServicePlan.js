@@ -1,6 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import useInView from "./hooks/useInView";
 import { useRef, useState } from "react";
+import CTAButton from "./Buttons/PrimaryButton";
 
 const ServicePlan = ({ blok }) => {
   const ref = useRef();
@@ -15,19 +16,18 @@ const ServicePlan = ({ blok }) => {
     <div
       ref={ref}
       {...storyblokEditable(blok)}
-      className="relative flex p-3 md:p-32 mt-28 bg-oakhill-black font-montserrat text-white"
+      className="relative flex flex-col lg:flex-row p-3 md:p-32 mt-28 bg-oakhill-black font-montserrat text-white"
     >
       {/* Tag */}
-      <div className="flex flex-col max-w-36 md:max-w-2xl">
+      <div className="flex flex-col lg:max-w-5xl">
         <div className="text-left mb-3">
-          <a
-            href="#"
-            className={`text-xs text-white uppercase ${
-              hasAnimated ? "animate-slideInLeft" : "opacity-0"
+          <p
+            className={`text-xs text-gray-500 uppercase ${
+              hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            Tag
-          </a>
+            Support
+          </p>
         </div>
 
         {/* Headline */}
@@ -37,95 +37,79 @@ const ServicePlan = ({ blok }) => {
               hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            Headline of our Services. Pay per month. Just relax.
+            Trygg och smidig hemsideshantering. Betala per månad.
           </h2>
         </div>
 
         {/* Paragraph */}
         <div className="text-left w-2/3">
           <p
-            className={`text-white md:text-xl ${
-              hasAnimated ? "animate-slideInRight" : "opacity-0"
+            className={`text-gray-500 md:text-l ${
+              hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            En kortis paragraph som kan komma till användning vid senare
-            tillfälle kanske. Kanske inte
+            Vi hanterar all underhåll och säkerhet – så att ni kan fokusera på
+            er verksamhet.
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between bg-red-400 w-full p-6">
+      <div className="flex flex-row justify-between lg:bg-gray-800 rounded-lg  w-full lg:p-6 mt-10 lg:mt-0 lg:max-w-5xl">
         {/* Left Side: Top Price & Text */}
-        <div className="flex flex-col justify-between">
+        <div
+          className={`flex flex-col justify-between transition-opacity duration-[3000ms] ${
+            hasAnimated ? "opacity-1" : "opacity-0"
+          }`}
+        >
           <div>
-            <h3
-              className={`text-5xl font-semibold text-white ${
-                hasAnimated ? "animate-slideUp" : "opacity-0"
-              }`}
-            >
+            <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
               300kr
             </h3>
-            <p
-              className={`text-xs text-white ${
-                hasAnimated ? "animate-slideUp" : "opacity-0"
-              }`}
-            >
-              per månad, avsluta när du vill
+            <p className="text-xs mb-10 lg:mb-0">
+              Per månad, avsluta när du vill
             </p>
           </div>
 
           {/* Left Side: Bottom Price & Text */}
           <div className="flex flex-col justify-end mb-6 md:mb-0">
-            <h3
-              className={`text-5xl font-semibold text-white ${
-                hasAnimated ? "animate-slideUp" : "opacity-0"
-              }`}
-            >
+            <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
               1500kr
             </h3>
-            <p
-              className={`text-xs text-white ${
-                hasAnimated ? "animate-slideUp" : "opacity-0"
-              }`}
-            >
-              För 6 månader. Boka nu!
-            </p>
+            <p className="text-xs">För 6 månader - Spara 300kr</p>
           </div>
         </div>
 
         {/* Right Side: Top Text & Button */}
-        <div className="flex flex-col justify-start justify-between mb-6 md:mb-0">
+        <div
+          className={`flex flex-col justify-between mb-6 md:mb-0 transition-opacity duration-[3000ms] ${
+            hasAnimated ? "opacity-1" : "opacity-0"
+          }`}
+        >
           <div className="flex flex-col justify-end">
-            <p
-              className={`text-sm text-white ${
-                hasAnimated ? "animate-slideInLeft" : "opacity-0"
-              }`}
-            >
-              Här är en text, vad gör den??
+            <p className="text-sm text-gray-400 mb-2 max-w-48">
+              Dygnet runt-support
             </p>
-            <button
-              className="bg-black text-white py-2 px-4 rounded-md hover:scale-105 transition-transform"
-              onClick={() => alert("Button 1 clicked")}
-            >
-              Boka
-            </button>
+            <CTAButton
+              className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
+              destinationURL="/contact"
+              packageType="serviceavtal"
+              price="300kr"
+              text="Skicka"
+            />
           </div>
 
           {/* Right Side: Bottom Text & Button */}
           <div>
-            <p
-              className={`text-sm text-white${
-                hasAnimated ? "animate-slideInLeft" : "opacity-0"
-              }`}
-            >
-              Vad ska det stå här då?
+            <p className="text-sm text-gray-400 mb-2 max-w-48">
+              Slipp förnya, säkra 6 månaders tillgång
             </p>
-            <button
-              className="bg-black text-white py-2 px-4 w-full rounded-md hover:scale-105 transition-transform"
-              onClick={() => alert("Button 2 clicked")}
-            >
-              Ingen aning
-            </button>
+            <CTAButton
+              className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
+              destinationURL="/contact"
+              packageType="serviceavtal"
+              price="1500kr"
+              text="Berätta mer"
+            />
           </div>
         </div>
       </div>
