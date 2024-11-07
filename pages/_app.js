@@ -1,4 +1,4 @@
-import Script from 'next/script';
+import Script from "next/script";
 import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Feature from "../components/Feature";
@@ -20,9 +20,10 @@ import FAQ from "../components/FAQ";
 import Packages from "../components/Packages";
 import Statistic from "../components/Statistic";
 import TextContent from "../components/Text/TextContent";
-import HeroContent from "../components/Text/HeroContent"
+import HeroContent from "../components/Text/HeroContent";
 import Process from "../components/Process";
-import StatisticItem from '../components/StatisticItem';
+import StatisticItem from "../components/StatisticItem";
+import ServicePlan from "../components/ServicePlan";
 
 const components = {
   feature: Feature,
@@ -46,7 +47,8 @@ const components = {
   textContent: TextContent,
   heroContent: HeroContent,
   process: Process,
-  statisticItem: StatisticItem
+  statisticItem: StatisticItem,
+  servicePlan: ServicePlan,
 };
 
 storyblokInit({
@@ -54,19 +56,19 @@ storyblokInit({
   use: [apiPlugin],
   components,
   apiOptions: {
-    region: ''
-  }
+    region: "",
+  },
 });
 
-function MyApp({ Component, pageProps }) { 
-  const isHomePage = pageProps.story && pageProps.story.full_slug === 'home'; // Check if it's the homepage
-  const {key, ...props} = pageProps;
-  
+function MyApp({ Component, pageProps }) {
+  const isHomePage = pageProps.story && pageProps.story.full_slug === "home"; // Check if it's the homepage
+  const { key, ...props } = pageProps;
+
   return (
-      <Layout story={pageProps.config}>
+    <Layout story={pageProps.config}>
       <Component key={key} {...props} />
-      </Layout>
-      );
+    </Layout>
+  );
 }
 
 export default MyApp;
