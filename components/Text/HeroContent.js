@@ -135,8 +135,11 @@ const HeroContent = ({ blok }) => {
                       onChange={handleChange}
                       className="mr-2"
                     />
-                    <label htmlFor="terms" className="text-sm">
-                      Jag godkänner att The Oakhill sparar mina uppgifter i syfte att kontakta mig.
+                    <label htmlFor="terms" className="text-xs">
+                      Jag godkänner att mina uppgifter sparas och används för att bli kontaktad enligt <a href="/privacy" className="relative group hover:text-gray-500">
+              Integritetspolicy
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
+            </a>
                     </label>
                   </div>
                   <button
