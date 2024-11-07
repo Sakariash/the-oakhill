@@ -9,7 +9,11 @@ const MenuLink = ({ blok }) => {
     <Link
       href={blok.link.cached_url}
       {...storyblokEditable(blok)}
-      className={`text-lg font-light relative group p-3 inline-block ${isContactLink ? "bg-oakhill-black text-white" : "text-black mr-2"}`}
+      className={`text-lg font-light relative group p-3 inline-block ${
+        isContactLink
+          ? "bg-oakhill-black rounded text-white"
+          : "text-black mr-2"
+      }`}
     >
       {blok.name}
       {isContactLink && (
