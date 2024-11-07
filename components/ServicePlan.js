@@ -1,7 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import useInView from "./hooks/useInView";
 import { useRef, useState } from "react";
-import CTAButton from "./Buttons/PrimaryButton";
+import PrimaryButton from "./Buttons/PrimaryButton";
 
 const ServicePlan = ({ blok }) => {
   const ref = useRef();
@@ -86,7 +86,7 @@ const ServicePlan = ({ blok }) => {
             <p className="text-sm text-gray-400 mb-2 max-w-48">
               {blok.first_cta_text}
             </p>
-            <CTAButton
+            <PrimaryButton
               className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
               destinationURL="/contact"
               packageType="serviceavtal"
@@ -100,7 +100,7 @@ const ServicePlan = ({ blok }) => {
             <p className="text-sm text-gray-400 mb-2 max-w-48">
               {blok.second_cta_text}
             </p>
-            <CTAButton
+            <PrimaryButton
               className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
               destinationURL="/contact"
               packageType="serviceavtal"
