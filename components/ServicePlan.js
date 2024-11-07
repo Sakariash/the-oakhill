@@ -26,7 +26,7 @@ const ServicePlan = ({ blok }) => {
               hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            Support
+            {blok.tag}
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const ServicePlan = ({ blok }) => {
               hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            Trygg och smidig hemsideshantering. Betala per månad.
+            {blok.headline}
           </h2>
         </div>
 
@@ -48,8 +48,7 @@ const ServicePlan = ({ blok }) => {
               hasAnimated ? "animate-slideDown" : "opacity-0"
             }`}
           >
-            Vi hanterar all underhåll och säkerhet – så att ni kan fokusera på
-            er verksamhet.
+            {blok.paragraph}
           </p>
         </div>
       </div>
@@ -63,19 +62,17 @@ const ServicePlan = ({ blok }) => {
         >
           <div>
             <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
-              300kr
+              {blok.first_price}kr
             </h3>
-            <p className="text-xs mb-10 lg:mb-0">
-              Per månad, avsluta när du vill
-            </p>
+            <p className="text-xs mb-10 lg:mb-0">{blok.first_price_text}</p>
           </div>
 
           {/* Left Side: Bottom Price & Text */}
           <div className="flex flex-col justify-end mb-6 md:mb-0">
             <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
-              1500kr
+              {blok.second_price}kr
             </h3>
-            <p className="text-xs">För 6 månader - Spara 300kr</p>
+            <p className="text-xs">{blok.second_price_text}</p>
           </div>
         </div>
 
@@ -87,7 +84,7 @@ const ServicePlan = ({ blok }) => {
         >
           <div className="flex flex-col justify-end">
             <p className="text-sm text-gray-400 mb-2 max-w-48">
-              Dygnet runt-support
+              {blok.first_cta_text}
             </p>
             <CTAButton
               className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
@@ -101,7 +98,7 @@ const ServicePlan = ({ blok }) => {
           {/* Right Side: Bottom Text & Button */}
           <div>
             <p className="text-sm text-gray-400 mb-2 max-w-48">
-              Slipp förnya, säkra 6 månaders tillgång
+              {blok.second_cta_text}
             </p>
             <CTAButton
               className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
