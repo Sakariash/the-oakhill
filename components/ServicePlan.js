@@ -64,7 +64,7 @@ const ServicePlan = ({ blok }) => {
             <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
               {blok.first_price}kr
             </h3>
-            <p className="text-xs mb-10 lg:mb-0">{blok.first_price_text}</p>
+            <p className="text-xs mb-10 lg:mb-0">{blok.first_price_info}</p>
           </div>
 
           {/* Left Side: Bottom Price & Text */}
@@ -72,7 +72,7 @@ const ServicePlan = ({ blok }) => {
             <h3 className="text-3xl md:text-5xl text-white mb-1 lg:mb-3">
               {blok.second_price}kr
             </h3>
-            <p className="text-xs">{blok.second_price_text}</p>
+            <p className="text-xs">{blok.second_price_info}</p>
           </div>
         </div>
 
@@ -82,12 +82,12 @@ const ServicePlan = ({ blok }) => {
             hasAnimated ? "opacity-1" : "opacity-0"
           }`}
         >
-          <div className="flex flex-col justify-end">
+          <div className="flex flex-col">
             <p className="text-sm text-gray-400 mb-2 max-w-48">
               {blok.first_cta_text}
             </p>
             <PrimaryButton
-              className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
+              className="ml-auto lg:w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
               destinationURL="/contact"
               packageType="serviceavtal"
               price="300kr"
@@ -96,12 +96,12 @@ const ServicePlan = ({ blok }) => {
           </div>
 
           {/* Right Side: Bottom Text & Button */}
-          <div>
+          <div className="flex flex-col">
             <p className="text-sm text-gray-400 mb-2 max-w-48">
               {blok.second_cta_text}
             </p>
             <PrimaryButton
-              className="w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
+              className="ml-auto lg:w-full border-gray-700 border hover:bg-white hover:text-black text-sm"
               destinationURL="/contact"
               packageType="serviceavtal"
               price="1500kr"
