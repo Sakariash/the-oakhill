@@ -36,10 +36,10 @@ const Packages = ({ blok }) => {
   }, [isBottomInView, hasTopAnimated, hasBottomAnimated]);
 
   return (
-    <div {...storyblokEditable(blok)} className="px-4 mt-28 font-montserrat">
+    <div {...storyblokEditable(blok)} className="mt-28 font-montserrat">
       <div
         ref={topRef}
-        className={`flex flex-col space-y-8 mb-14 md:flex-row md:space-y-0 md:space-x-8 ${
+        className={`flex flex-col px-4 space-y-8 md:flex-row md:space-y-0 md:space-x-8 mb-14 ${
           hasTopAnimated ? "animate-slideUp" : "opacity-0"
         }`}
       >
@@ -78,12 +78,12 @@ const Packages = ({ blok }) => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col justify-center items-center w-full bg-oakhill-black p-20 mb-14">
-        <h3 className=" text-3xl lg:text-5xl w-3/4 mb-10 text-white">
+      <div className="flex flex-col  w-full bg-oakhill-black py-10 px-3 text-left md:p-32 mb-14">
+        <h3 className=" text-3xl lg:text-5xl lg:w-3/4 mb-10 text-white">
           Skräddarsydda lösningar <br /> Betala månad för månad för din digitala
           tillväxt
         </h3>
-        <p className="text-sm w-3/4 lg:text-base text-white">
+        <p className="text-sm lg:w-2/4 lg:text-base text-white text-left">
           Få flexibel tillgång till kvalificerad programmering där du betalar
           månadsvis. Oavsett om du vill bygga en ny hemsida, uppdatera en
           befintlig bygga ett system eller en e-handel. Välj det paket som
@@ -92,7 +92,7 @@ const Packages = ({ blok }) => {
       </div>
       <div
         ref={bottomRef}
-        className={`flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8 ${
+        className={`flex flex-col px-4 space-y-8 md:flex-row md:space-y-0 md:space-x-8 ${
           hasBottomAnimated ? "animate-slideUp" : "opacity-0"
         }`}
       >
