@@ -1,27 +1,40 @@
-import React, { useState } from 'react';
-import { storyblokEditable } from '@storyblok/react';
-import { FiArrowUpRight } from 'react-icons/fi';
+import React, { useState } from "react";
+import { storyblokEditable } from "@storyblok/react";
+import { FiArrowUpRight } from "react-icons/fi";
+import PrimaryButton from "../Buttons/PrimaryButton";
+import SecondaryButton from "../Buttons/SecondaryButton";
 
 const formatTextWithLineBreaks = (text) => {
-  return text.split(/(\. )/).map((part, index) => (
-    part.match(/(\. )/) ? <React.Fragment key={index}>{part}<br /></React.Fragment> : part
-  ));
+  return text.split('"').map((part, index) => {
+    // Första delen, inga radbrytningar behövs
+    if (index === 0) {
+      return part;
+    }
+
+    // För efterföljande delar, sätt in ett <br /> innan varje del
+    return (
+      <>
+        <br />
+        {part}
+      </>
+    );
+  });
 };
 
 const HeroContent = ({ blok }) => {
   const [formData, setFormData] = useState({
-    email: '',
+    email: "",
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       setIsChecked(checked);
     } else {
       setFormData({ ...formData, [name]: value });
@@ -30,7 +43,7 @@ const HeroContent = ({ blok }) => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.email) newErrors.email = 'Vänligen fyll i er email';
+    if (!formData.email) newErrors.email = "Vänligen fyll i er email";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -38,29 +51,29 @@ const HeroContent = ({ blok }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isChecked) {
-      setError('Du måste godkänna att vi sparar dina uppgifter.');
+      setError("Du måste godkänna att vi sparar dina uppgifter.");
       return;
     }
     if (validateForm()) {
       try {
-        const response = await fetch('/api/send-email', {
-          method: 'POST',
+        const response = await fetch("/api/send-email", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
         });
 
         if (response.ok) {
           setSubmitted(true);
-          setFormData({ email: '' });
+          setFormData({ email: "" });
           setErrors({});
         } else {
-          setError('Ett fel uppstod, vänligen försök igen!');
+          setError("Ett fel uppstod, vänligen försök igen!");
         }
       } catch (error) {
-        console.error('Error sending email:', error);
-        setError('Ett fel uppstod, vänligen försök igen!');
+        console.error("Error sending email:", error);
+        setError("Ett fel uppstod, vänligen försök igen!");
       }
     }
   };
@@ -75,88 +88,55 @@ const HeroContent = ({ blok }) => {
 
   const getLabelClasses = (field) => {
     const isFocused = focusedField === field;
-    const isFilled = formData[field] !== '';
+    const isFilled = formData[field] !== "";
     return `absolute left-3 text-gray-500  text-sm font-medium transition-transform duration-500 ease-in-out ${
       isFilled || isFocused
-        ? 'transform -translate-y-4 scale-75 top-1'
-        : 'top-3'
+        ? "transform -translate-y-4 scale-75 top-1"
+        : "top-3"
     }`;
   };
 
   return (
-    <div {...storyblokEditable(blok)} className="relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url(${blok.image.filename})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh',
-        zIndex: -1,
-      }}></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-white to-50% z-10"></div>
-      <div className="absolute inset-0 bg-white opacity-100 mix-blend-multiply " style={{ zIndex: 0 }}></div>
-
-      <div className="flex justify-between h-full mx-4">
-        <div className="grid grid-cols-12 grid-rows-12 w-full z-40 mt-8">
-          {blok.headline && (
-            <div className="col-start-1 col-end-12 row-start-2 row-end-3 text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-7xl animate-slideDown">
-                {formatTextWithLineBreaks(blok.headline)}
-              </h1>
-            </div>
-          )}
-          <div className="col-start-1 col-end-12 md:col-end-6 row-start-5 row-end-12 md:row-start-6 text-left animate-slideInLeft">
-            <div className="max-w-md">
-              {submitted ? (
-                <p className="text-left">Vi har registrerat din e-mail och kommer inom en snar framtid att höra av oss till dig via mail!</p>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                    <p className='text-gray-500 text-sm'>Email*</p>
-                  <div className="relative mb-4">
-                    <label htmlFor="email" className={getLabelClasses('email')}>
-                    Boka ett gratis möte redan idag!
-                    </label>
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onFocus={() => handleFocus('email')}
-                      onBlur={handleBlur}
-                      className={`w-full px-2 py-2 border-2 rounded-md ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none `}
-                    />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                  </div>
-                  <div className="flex items-center mb-4">
-                    <input
-                      type="checkbox"
-                      id="terms"
-                      checked={isChecked}
-                      onChange={handleChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="terms" className="text-xs">
-                      Jag godkänner att mina uppgifter sparas och används för att bli kontaktad enligt <a href="/privacy" className="relative group hover:text-gray-500">
-              Integritetspolicy
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
-            </a>
-                    </label>
-                  </div>
-                  <button
-      type="submit"
-      className="relative w-full py-2 bg-oakhill-black text-white rounded transition duration-200 flex items-center justify-center group"
+    <div
+      {...storyblokEditable(blok)}
+      className="flex justify-center items-center align-middle w-full overflow-hidden"
     >
-      Skicka
-      <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
-        <FiArrowUpRight className="transform transition-transform duration-300 ease-in-out" />
-      </span>
-    </button>
-                  {error && <p className="text-red-500 text-center mt-2">{error}</p>}
-                </form>
-              )}
-            </div>
+      <div className="mt-24 lg:mt-48 mx-2 lg:max-w-screen-lg">
+        <div className="text-xs lg:text-lg w-full uppercase text-gray-500 animate-slideDown">
+          Bygg en stark digital närvaro för långsiktig framgång
+        </div>
+        {blok.headline && (
+          <div className="mb-8">
+            <h1 className="text-4xl mb-4 sm:text-4xl lg:text-7xl animate-slideDown">
+              {formatTextWithLineBreaks(blok.headline)}
+            </h1>
+          </div>
+        )}
+        <div className="flex justify-center animate-slideInLeft text-gray-500">
+          <div className="md:w-1/2 mb-10">{blok.tagline}</div>
+        </div>
+
+        {/* Center buttons */}
+        <div className="flex justify-center mb-4">
+          <div className="flex justify-center w-full max-w-screen-sm gap-1 md:gap-2">
+            <PrimaryButton
+              text="Våra tjänster"
+              destinationURL="services"
+              className="md:w-1/3"
+            >
+              Primary
+            </PrimaryButton>
+            <SecondaryButton
+              text="Kontakta oss"
+              destinationURL="services"
+              className="md:w-1/3"
+            >
+              Secondary
+            </SecondaryButton>
           </div>
         </div>
+
+        {error && <p className="text-red-500 text-center mt-2">{error}</p>}
       </div>
     </div>
   );
