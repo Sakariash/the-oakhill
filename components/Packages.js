@@ -2,7 +2,7 @@ import { storyblokEditable } from "@storyblok/react";
 import { useRouter } from "next/router";
 import { useRef, useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
+import MeetingButton from "./Buttons/MeetingButton";
 import useInView from "./hooks/useInView";
 
 const Packages = ({ blok }) => {
@@ -28,7 +28,6 @@ const Packages = ({ blok }) => {
     }
   }, [isTopInView, hasTopAnimated]);
 
-  // Set animation state for the bottom section (only trigger after the top has animated)
   useEffect(() => {
     if (isBottomInView && hasTopAnimated && !hasBottomAnimated) {
       setHasBottomAnimated(true);
@@ -43,7 +42,6 @@ const Packages = ({ blok }) => {
           hasTopAnimated ? "animate-slideUp" : "opacity-0"
         }`}
       >
-        {/* Package Section */}
         {packages.map((pkg) => (
           <div
             key={pkg._uid}
@@ -65,29 +63,27 @@ const Packages = ({ blok }) => {
                 {pkg.price}{" "}
                 <span className="text-gray-500 text-sm">exkl. moms</span>
               </span>
-              <button
-                onClick={() => handleClick(pkg.package_name)}
+              <MeetingButton
+                packageType="paket"
+                packageName={pkg.package_name}
+                price={pkg.price}
                 className="bg-oakhill-black transform hover:scale-105 transition duration-200 text-white py-4 px-4 rounded-md flex items-center justify-center group"
-              >
-                Boka möte
-                <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
-                  <FiArrowUpRight />
-                </span>
-              </button>
+              />
             </div>
           </div>
         ))}
       </div>
-      <div className="flex flex-col  w-full bg-oakhill-black py-10 px-3 text-left md:p-32 mb-14">
+      <div className="flex flex-col w-full bg-oakhill-black py-10 px-3 text-left md:p-32 mb-14">
+        <div className="text-left mb-3">
+          <p className="text-xs text-gray-500 uppercase">prenumerera på kod</p>
+        </div>
         <h3 className=" text-3xl lg:text-5xl lg:w-3/4 mb-10 text-white">
-          Skräddarsydda lösningar <br /> Betala månad för månad för din digitala
-          tillväxt
+          Skräddarsydda lösningar <br />
+          för din digitala tillväxt
         </h3>
-        <p className="text-sm lg:w-2/4 lg:text-base text-white text-left">
-          Få flexibel tillgång till kvalificerad programmering där du betalar
-          månadsvis. Oavsett om du vill bygga en ny hemsida, uppdatera en
-          befintlig bygga ett system eller en e-handel. Välj det paket som
-          passar bäst för ert företags utveckling och väx tillsammans med oss!
+        <p className="text-sm lg:w-2/4 lg:text-base text-gray-500 text-left">
+          Betala månad för månad och få flexibel tillgång till kvalificerad
+          programmering.
         </p>
       </div>
       <div
@@ -96,7 +92,6 @@ const Packages = ({ blok }) => {
           hasBottomAnimated ? "animate-slideUp" : "opacity-0"
         }`}
       >
-        {/* Subscription Plans */}
         {subscriptionPlans.map((plan) => (
           <div
             key={plan._uid}
@@ -113,31 +108,20 @@ const Packages = ({ blok }) => {
             <div className="justify-center my-5">
               <h3 className="text-6xl text-gray-800 mx-5">
                 {plan.hours}
-                <span className="text-gray-500 text-sm">/månad</span>
+                <span className="text-sm"> h</span>
               </h3>
-              <span className="text-gray-500 text-sm md:text-lg">
-                ≈ {plan.price}kr exkl. moms
-              </span>
             </div>
-            <ul className="space-y-3 font-light text-gray-700 flex-grow">
-              {plan.features.length > 0 &&
-                plan.features.map((feature, index) => (
-                  <li key={index} className="flex items-center">
-                    <FaCheck className="text-oakhill-black mr-3" />
-                    {feature}
-                  </li>
-                ))}
-            </ul>
-            <div className="flex justify-center pt-6 mt-4 h-20">
-              <button
-                onClick={() => handleClick(plan.headline)}
+            <div className="flex justify-between items-center pt-6 border-t-2 border-gray-300 mt-4 h-20">
+              <span className="text-gray-900 text-sm md:text-lg">
+                {plan.price}{" "}
+                <span className="text-gray-500 text-sm">exkl. moms</span>
+              </span>
+              <MeetingButton
+                packageType="prenumerentation"
+                packageName={plan.headline}
+                price={plan.price}
                 className="bg-oakhill-black transform hover:scale-105 transition duration-200 text-white py-4 px-4 rounded-md flex items-center justify-center group"
-              >
-                Boka möte
-                <span className="inline-block ml-2 transition-transform duration-700 ease-in-out transform group-hover:rotate-45 group-hover:translate-y-[2px]">
-                  <FiArrowUpRight />
-                </span>
-              </button>
+              />
             </div>
           </div>
         ))}
