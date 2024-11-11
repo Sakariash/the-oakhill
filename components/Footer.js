@@ -1,14 +1,20 @@
 import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/router";
 import useIsMobile from "./hooks/useIsMobile";
 
 const Footer = () => {
-  const [hasAnimated, setHasAnimated] = useState(false); // To track if the animation has already been triggered
+  const [hasAnimated, setHasAnimated] = useState(false);
   const isMobile = useIsMobile();
-
-  const logoRef = useRef(null); // Ref for the logo element
-  const footerRef = useRef(null); // Ref for the footer element
+  const router = useRouter();
+  const logoRef = useRef(null);
+  const footerRef = useRef(null);
 
   useEffect(() => {
+    if (router.pathname !== "/") {
+      setHasAnimated(true); // Skip animation if not on the home page
+      return;
+    }
+
     const handleScroll = () => {
       const footer = footerRef.current;
       const logo = logoRef.current;
@@ -19,7 +25,7 @@ const Footer = () => {
 
         // Trigger animation when the footer is halfway visible in the viewport
         if (footerRect.top <= window.innerHeight / 2 && !hasAnimated) {
-          setHasAnimated(true); // Set animation as triggered
+          setHasAnimated(true);
         }
       }
     };
@@ -33,7 +39,6 @@ const Footer = () => {
 
   return (
     <>
-      {/* Footer */}
       <footer
         ref={footerRef}
         id="footer"
@@ -148,8 +153,6 @@ const Footer = () => {
               <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
             </a>
           </div>
-
-          {/* Footer links */}
           <div className="col-span-2 md:col-span-2 mt-8 md:mt-0 flex flex-wrap justify-between">
             <ul role="list" className="w-1/2 space-y-4">
               <li>
@@ -192,8 +195,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Location link */}
           <div className="col-span-4 md:col-span-full mt-8 md:mt-32">
             <a
               className="relative group"
@@ -207,8 +208,6 @@ const Footer = () => {
               <span className="absolute -bottom-[6px] left-0 h-[2px] bg-gray-400 transition-all duration-700 ease-in-out w-0 group-hover:w-full"></span>
             </a>
           </div>
-
-          {/* Policy links */}
           <div className="col-span-full md:col-span-5 flex space-x-8 md:mt-4 pt-6">
             <a
               href="/privacy"
@@ -225,8 +224,6 @@ const Footer = () => {
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
             </a>
           </div>
-
-          {/* Copyright */}
           <div className="col-span-full md:col-span-3 flex md:text-lg text-gray-500 md:mt-10 mt-16">
             <span>© 2024 The Oakhill</span>
             <span className="ml-8">All rights reserved.</span>
