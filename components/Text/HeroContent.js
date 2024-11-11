@@ -101,18 +101,18 @@ const HeroContent = ({ blok }) => {
       {...storyblokEditable(blok)}
       className="flex justify-center items-center align-middle w-full overflow-hidden"
     >
-      <div className="mt-24 lg:mt-48 mx-2 lg:max-w-screen-lg">
-        <div className="text-xs lg:text-lg w-full uppercase text-gray-500 animate-slideDown">
+      <div className="mt-24 lg:mt-48 mx-2 lg:max-w-screen-xl">
+        <div className="text-xs lg:text-base w-full uppercase text-gray-500 animate-slideDown">
           Bygg en stark digital närvaro för långsiktig framgång
         </div>
         {blok.headline && (
           <div className="mb-8">
-            <h1 className="text-4xl mb-4 sm:text-4xl lg:text-7xl animate-slideDown">
+            <h1 className="text-4xl mb-4 sm:text-4xl lg:text-8xl animate-slideDown">
               {formatTextWithLineBreaks(blok.headline)}
             </h1>
           </div>
         )}
-        <div className="flex justify-center animate-slideInLeft text-gray-500">
+        <div className="flex justify-center text-lg animate-slideInLeft text-gray-500">
           <div className="md:w-1/2 mb-10">{blok.tagline}</div>
         </div>
 
@@ -128,7 +128,7 @@ const HeroContent = ({ blok }) => {
             </PrimaryButton>
             <SecondaryButton
               text="Kontakta oss"
-              destinationURL="services"
+              destinationURL="contact"
               className="md:w-1/3"
             >
               Secondary
