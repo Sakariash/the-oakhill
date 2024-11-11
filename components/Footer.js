@@ -209,20 +209,20 @@ const Footer = () => {
           </div>
 
           {/* Policy links */}
-          <div className="col-span-full md:col-span-5 flex space-x-8 md:mt-4">
+          <div className="col-span-full md:col-span-5 flex space-x-8 md:mt-4 pt-6">
             <a
               href="/privacy"
               className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200"
             >
               Integritetspolicy
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
+              <span className="absolute  bottom-0 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
             </a>
             <a
               href="#"
               className="text-sm md:text-lg text-gray-500 relative group hover:text-slate-200"
             >
               Användarvillkor
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gray-400 transition-all duration-700 ease-in-out group-hover:w-full"></span>
             </a>
           </div>
 
