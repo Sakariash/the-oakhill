@@ -49,11 +49,11 @@ const Custom404 = ({ storyData }) => {
   );
 };
 
-export async function getStaticProps() {
-  const storyData = await getStoryblokData("404"); // Fetch the 404 data at build time
-  return {
-    props: { storyData },
-  };
-}
+// export async function getStaticProps() {
+//   const storyData = await getStoryblokData("404"); // Fetch the 404 data at build time
+//   return {
+//     props: { storyData },
+//   };
+// }
 
 export default Custom404;
