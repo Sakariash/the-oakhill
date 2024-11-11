@@ -37,8 +37,12 @@ const Footer = () => {
       <footer
         ref={footerRef}
         id="footer"
-        className={`font-montserrat border-t border-gray-600 p-8 md:px-48 bg-oakhill-black text-white ${
-          hasAnimated ? "mt-28" : "mt-80"
+        className={`font-montserrat border-t border-gray-600 p-8 md:px-48 bg-oakhill-black text-white  ${
+          hasAnimated
+            ? "mt-28" // If hasAnimated is true, apply mt-28 regardless of isMobile
+            : isMobile
+            ? "mt-48" // If hasAnimated is false and isMobile is true, apply mt-48
+            : "mt-80" // If both hasAnimated and isMobile are false, apply mt-80
         } transition-all duration-700 ease-in-out`}
         aria-labelledby="footer-heading"
         style={{ position: "relative" }}
@@ -53,7 +57,7 @@ const Footer = () => {
           }`}
           style={{
             position: "absolute",
-            top: hasAnimated ? "24px" : "-50%", // Position the logo outside initially
+            top: `${hasAnimated ? "24px" : isMobile ? "-25%" : "-50%"}`, // Position the logo outside initially
             left: "50%",
             transform: "translateX(-50%)",
             fontSize: "3rem",
