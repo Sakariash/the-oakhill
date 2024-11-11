@@ -61,7 +61,6 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) {
-  console.log("Component", pageProps);
   const isHomePage = pageProps.story && pageProps.story.full_slug === "home"; // Check if it's the homepage
   const { key, ...props } = pageProps;
 
