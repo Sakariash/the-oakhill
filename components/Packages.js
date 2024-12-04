@@ -108,7 +108,7 @@ const Packages = ({ blok }) => {
             <div className="justify-center my-5">
               <h3 className="text-6xl text-gray-800 mx-5">
                 {plan.hours}
-                <span className="text-sm"> h</span>
+                <span className="text-sm">/månad</span>
               </h3>
             </div>
             <div className="flex justify-between items-center pt-6 border-t-2 border-gray-300 mt-4 h-20">
