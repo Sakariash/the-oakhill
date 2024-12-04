@@ -16,7 +16,7 @@ const FAQ = ({ blok }) => {
         <div 
           key={index} 
           className={`transition-all duration-300 ease-in-out
-           border-black
+           border-oakhill-black
             border-b-2 px-2 mx-auto md:mx-[100px]`}
         >
           <div 
